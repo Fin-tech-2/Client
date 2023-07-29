@@ -1,0 +1,30 @@
+Index: src/index.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react';\r\nimport ReactDOM from 'react-dom';\r\nimport \"./index.css\";\r\nimport App from \"./App\";\r\n\r\nReactDOM.render(\r\n    <React.StrictMode>\r\n        <App />\r\n    </React.StrictMode>,\r\n    document.getElementById('root')\r\n);
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/index.tsx b/src/index.tsx
+--- a/src/index.tsx	(revision b0840256c199cd67e439b045e5c85fc9b99a776f)
++++ b/src/index.tsx	(date 1690610781941)
+@@ -1,11 +1,13 @@
+-import React from 'react';
+-import ReactDOM from 'react-dom';
++import React from "react";
++import ReactDOM from "react-dom/client";
+ import "./index.css";
+ import App from "./App";
+ 
+-ReactDOM.render(
++const root = ReactDOM.createRoot(
++    document.getElementById("root") as HTMLElement
++);
++root.render(
+     <React.StrictMode>
+         <App />
+-    </React.StrictMode>,
+-    document.getElementById('root')
++    </React.StrictMode>
+ );
+\ No newline at end of file
