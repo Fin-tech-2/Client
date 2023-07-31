@@ -1,9 +1,9 @@
 .Header {
   display: flex;
-  position: fixed;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  height: 80px;
   border-bottom: solid 1px #bdbdbd;
 }
 
@@ -52,5 +52,17 @@
   li {
     padding: 0px 10px 0px 10px;
     cursor: pointer;
+  }
+}
+
+@media (max-width: 400px) {
+  .content {
+    img {
+      width: 30px;
+    }
+  }
+
+  .navigation {
+    font-size: 10px;
   }
 }

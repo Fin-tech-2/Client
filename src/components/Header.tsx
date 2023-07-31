@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./../css/Header.scss";
 const Header = () => {
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
 
   return (
     <header className="Header">
