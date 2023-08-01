@@ -1,6 +1,8 @@
 import "./../css/Home.scss";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import SearchBar from "../components/SearchBar";
+
 const Home = () => {
   return (
     <div className="Home">
@@ -27,6 +29,7 @@ const Home = () => {
             <img src={process.env.PUBLIC_URL + `assets/banner2.svg`} />
           </div>
         </div>
+        <SearchBar />
       </main>
       <Footer />
     </div>
