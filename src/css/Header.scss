@@ -10,6 +10,7 @@
 .content {
   display: flex;
   align-items: center;
+  margin-left: 30px;
 
   img {
     width: 40px;
@@ -44,7 +45,7 @@
 .navigation {
   display: flex;
   color: #686868;
-
+  margin-right: 30px;
   ul {
     display: flex;
     list-style: none;
@@ -57,6 +58,7 @@
 
 @media (max-width: 400px) {
   .content {
+    margin-left: 0px;
     img {
       width: 30px;
     }
@@ -64,5 +66,9 @@
 
   .navigation {
     font-size: 10px;
+    margin-right: 0px;
+    li {
+      padding: 0px 10px 0px 10px;
+    }
   }
 }
