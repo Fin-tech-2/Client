@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import SearchBar from "../components/SearchBar";
 import PreviewForm from "../components/PreviewForm";
 import { PreviewData } from "../types";
+import Category from "../components/Category";
 
 const Home = () => {
   const dummyData: PreviewData[] = [
@@ -77,6 +78,7 @@ const Home = () => {
           </div>
         </div>
         <SearchBar />
+        <Category />
         <PreviewForm data={dummyData} />
       </main>
       <Footer />
