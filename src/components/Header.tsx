@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./../css/Header.scss";
+import { useNavigate } from "react-router-dom";
 const Header = () => {
+  const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
 
   return (
@@ -30,7 +32,13 @@ const Header = () => {
         {isLogin ? (
           <>
             <ul>
-              <li>펀딩등록</li>
+              <li
+                onClick={() => {
+                  navigate("/create-punding");
+                }}
+              >
+                펀딩등록
+              </li>
               <li>마이페이지</li>
               <li>로그아웃</li>
             </ul>
