@@ -7,7 +7,12 @@ const Header = () => {
 
   return (
     <header className="Header">
-      <div className="content">
+      <div
+        className="content"
+        onClick={() => {
+          navigate("/");
+        }}
+      >
         <div className="logo">
           <img
             src={process.env.PUBLIC_URL + `assets/Logo.svg`}
