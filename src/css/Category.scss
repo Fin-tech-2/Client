@@ -1,0 +1,27 @@
+.Category {
+  margin-top: 50px;
+  color: #474747;
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px;
+    list-style: none;
+
+    li {
+      display: flex;
+      align-items: center;
+      border: 1px solid;
+      border-radius: 30px;
+      padding: 10px 20px 10px 20px;
+
+      .icon {
+        padding-right: 10px;
+        font-size: 20px;
+      }
+
+      &:hover {
+        color: #64a346;
+      }
+    }
+  }
+}
