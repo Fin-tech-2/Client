@@ -6,7 +6,6 @@ const CreateFunding = () => {
   const [fundingData, setFundingData] = useState("d");
   return (
     <div>
-      <Header />
       <div className="CreateFunding">
         <div className="form">
           <table>
@@ -57,7 +56,6 @@ const CreateFunding = () => {
           <button>펀딩등록</button>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
