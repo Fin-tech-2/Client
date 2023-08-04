@@ -1,12 +1,9 @@
 import "./../css/Home.scss";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import SearchBar from "../components/SearchBar";
 
 const Home = () => {
   return (
     <div className="Home">
-      <Header />
       <main>
         <div className="banner">
           <div className="top"></div>
@@ -31,7 +28,6 @@ const Home = () => {
         </div>
         <SearchBar />
       </main>
-      <Footer />
     </div>
   );
 };

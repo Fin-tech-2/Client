@@ -1,0 +1,85 @@
+.emailInput,.pwInput, .nameInput, .phoneInput,.address,.addressDetailInput, .addressDetail, .signUpBtn  {
+  border-color: #64a346;
+  border-width: 1px;
+  width: 400px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.addressNumber {
+  border-color: #64a346;
+  border-width: 1px;
+  width: 200px;
+  left: 50%;
+  transform: translate(-100%, 0%);
+}
+
+.container {
+  display: block;
+}
+
+.grid{
+  display: grid;
+}
+
+.addressNumberBtn {
+  width: 100px;
+  left: 45%;
+  transform: translate(-100%, 0%);
+}
+
+.interests {
+  //width: 400px;
+  border-color: #64a346;
+  border-width: 3px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.emailInput {
+  margin-top: 50px;
+}
+
+%placeholder {
+  color: black;
+  font-weight: bold;
+}
+.loginBtn, .idSearchBtn, .pwSearchBtn, .addressNumberBtn, .signUpBtn {
+  background-color: #64a346;
+  //color: black;
+  font-weight: bold;
+}
+
+.loginBtn {
+  left: 50%;
+  width: 400px;
+  transform: translate(-50%, 0%);
+}
+
+.idSearchBtn, .pwSearchBtn {
+  left: 50%;
+  width: 150px;
+  transform: translate(-105%, 0%);
+}
+
+.idSearchBtn {
+  margin-right: 20px;
+}
+
+.tabBorder {
+  border-radius: 8px 8px 8px 8px;
+  border: 1px solid #64a346 !important;
+  width: 440px;
+  margin: 20px auto 0;
+}
+
+.ant-tabs-tab{
+  width: 219px!important;
+  border: solid 1px #64a346 !important;
+}
+
+.ant-tabs-content{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}

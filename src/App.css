@@ -9,3 +9,7 @@
 body {
   font-family: "GangwonState";
 }
+
+.app-content{
+  min-height: calc(100vh - 100px - 80px);
+}
