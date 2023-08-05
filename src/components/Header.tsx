@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
   const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
+  const goLoginPage = () => {
+        navigate('./login');
+    }
 
   return (
     <header className="Header">
@@ -45,6 +48,7 @@ const Header = () => {
                 펀딩등록
               </li>
               <li>마이페이지</li>
+                <li onClick={goLoginPage} >로그인/회원가입</li> {/*백엔드 구현 전 개발 편의성 위함*/}
               <li>로그아웃</li>
             </ul>
           </>

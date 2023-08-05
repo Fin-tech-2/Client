@@ -4,7 +4,6 @@ import {Button, Form, Input, Select} from 'antd';
 import {useDaumPostcodePopup} from "react-daum-postcode";
 import {useNavigate} from "react-router-dom";
 
-
 type FieldType = {
     email?: string;
     password?: string;
@@ -49,10 +48,10 @@ const SignUp = () => {
 
     return (
         <Form>
-            <Form.Item<FieldType> name="email">
+            <Form.Item<FieldType> name="email" rules={[{required: true}]}>
                 <Input placeholder="이메일" className="emailInput"/>
             </Form.Item>
-            <Form.Item<FieldType> name="password">
+            <Form.Item<FieldType> name="password" rules={[{required: true}]}>
                 <Input.Password placeholder="비밀번호" className="pwInput"/>
             </Form.Item>
 
@@ -67,7 +66,7 @@ const SignUp = () => {
                             if (!value || getFieldValue('password') === value) {
                                 return Promise.resolve();
                             }
-                            return Promise.reject(new Error(''));
+                            return Promise.reject(new Error('password is not consistent!!'));
                         },
                     }),
                 ]}
@@ -75,13 +74,13 @@ const SignUp = () => {
                 <Input.Password placeholder="비밀번호 확인" className="pwInput"/>
             </Form.Item>
 
-            <Form.Item<FieldType> name="name">
+            <Form.Item<FieldType> name="name" rules={[{required: true}]}>
                 <Input placeholder="이름" className="nameInput"/>
             </Form.Item>
-            <Form.Item<FieldType> name="phone">
+            <Form.Item<FieldType> name="phone" rules={[{required: true}]}>
                 <Input placeholder="전화번호" className="phoneInput"/>
             </Form.Item>
-            <Form.Item<FieldType> name="addressNumber">
+            <Form.Item<FieldType> name="addressNumber" >
                 <div className="container">
                     <Input placeholder="우편번호" className="addressNumber" value={address}/>
                     <Button className="addressNumberBtn" type="primary" onClick={handleClick}> 검색 </Button>
