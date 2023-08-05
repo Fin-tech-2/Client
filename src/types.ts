@@ -8,8 +8,9 @@ export interface PreviewData {
 
 export interface FundingData {
   title: string;
-  cost: number;
-  start: Date;
-  end: Date;
-  categofy: string;
+  cost: string;
+  start: string;
+  end: string;
+  thumbnail: File | null;
+  category: string;
 }

@@ -1,9 +1,40 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import "./../css/CreateFunding.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { FundingData } from "../types";
+
 const CreateFunding = () => {
-  const [fundingData, setFundingData] = useState("d");
+  const [inputs, setInputs] = useState<FundingData>({
+    title: "",
+    cost: "",
+    start: "",
+    end: "",
+    thumbnail: null,
+    category: "",
+  });
+
+  const { title, cost, start, end, thumbnail, category } = inputs;
+
+  const inputsHandler = (e: any) => {
+    const { name, type } = e.target;
+
+    if (type === "file") {
+      setInputs({
+        ...inputs,
+        thumbnail: e.target.files[0],
+      });
+    } else {
+      setInputs({
+        ...inputs,
+        [name]: e.target.value,
+      });
+    }
+  };
+
+  const createHandler = () => {
+    //axios 처리
+    console.log(inputs);
+  };
+
   return (
     <div>
       <div className="CreateFunding">
@@ -12,37 +43,59 @@ const CreateFunding = () => {
             <tr>
               <td className="head">타이틀</td>
               <td>
-                <input className="input" />
+                <input
+                  className="input"
+                  name="title"
+                  onChange={inputsHandler}
+                />
               </td>
             </tr>
             <tr>
               <td className="head">목표금액</td>
               <td>
-                <input className="input" />
+                <input className="input" name="cost" onChange={inputsHandler} />
               </td>
             </tr>
             <tr>
               <td className="head">시작날짜</td>
               <td>
-                <input className="input" type="date" />
+                <input
+                  className="input"
+                  type="date"
+                  name="start"
+                  onChange={inputsHandler}
+                />
               </td>
             </tr>
             <tr>
               <td className="head">종료날짜</td>
               <td>
-                <input className="input" type="date" />
+                <input
+                  className="input"
+                  type="date"
+                  name="end"
+                  onChange={inputsHandler}
+                />
               </td>
             </tr>
             <tr>
               <td className="head">썸네일</td>
               <td>
-                <input className="input thumbnail" type="file" />
+                <input
+                  className="input thumbnail"
+                  type="file"
+                  onChange={inputsHandler}
+                />
               </td>
             </tr>
             <tr>
               <td className="head">카테고리</td>
               <td>
-                <select className="input">
+                <select
+                  className="input"
+                  name="category"
+                  onChange={inputsHandler}
+                >
                   <option>펀드</option>
                   <option>부동산</option>
                   <option>주식</option>
@@ -53,7 +106,7 @@ const CreateFunding = () => {
           </table>
         </div>
         <div className="create">
-          <button>펀딩등록</button>
+          <button onClick={createHandler}>펀딩등록</button>
         </div>
       </div>
     </div>
