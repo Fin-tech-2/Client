@@ -11,7 +11,7 @@ const Category = () => {
       <ul>
         <li>
           <AiOutlineStar className="icon" />
-          펀드
+          펀드!!
         </li>
         <li>
           <AiOutlineHome className="icon" />

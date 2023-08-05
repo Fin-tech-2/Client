@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="763476be-c6c0-43d5-bb6f-ef542fcc8bb9" name="Changes" comment="헤더/푸터 App.tsx에서 한번에 관리">
-      <change beforePath="$PROJECT_DIR$/.idea/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Client.iml" afterDir="false" />
+    <list default="true" id="763476be-c6c0-43d5-bb6f-ef542fcc8bb9" name="Changes" comment="로그인 화면 리팩토링">
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-07-29__3_12__________.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-07-29_오후_3_12,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/Login.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Login.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/CreateFunding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CreateFunding.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/login/LoginTab.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/LoginTab.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/login/SignUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/SignUp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Category.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Category.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +86,7 @@
       <workItem from="1690942610720" duration="14397000" />
       <workItem from="1691025326124" duration="12276000" />
       <workItem from="1691141514565" duration="6012000" />
-      <workItem from="1691193801335" duration="9291000" />
+      <workItem from="1691193801335" duration="10584000" />
     </task>
     <task id="LOCAL-00001" summary="로그인/회원가입 페이지 구현">
       <created>1691147059056</created>
@@ -110,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691147449035</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="로그인 화면 리팩토링">
+      <created>1691209453713</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1691209453714</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +129,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="로그인/회원가입 페이지 구현" />
     <MESSAGE value="헤더/푸터 App.tsx에서 한번에 관리" />
-    <option name="LAST_COMMIT_MESSAGE" value="헤더/푸터 App.tsx에서 한번에 관리" />
+    <MESSAGE value="로그인 화면 리팩토링" />
+    <option name="LAST_COMMIT_MESSAGE" value="로그인 화면 리팩토링" />
   </component>
 </project>
