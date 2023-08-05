@@ -1,71 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="da7ebc32-4e27-4009-a1ce-57465a2c28cc" name="변경" comment="커밋 및 푸시 확인">
+    <list default="true" id="763476be-c6c0-43d5-bb6f-ef542fcc8bb9" name="Changes" comment="헤더/푸터 App.tsx에서 한번에 관리">
+      <change beforePath="$PROJECT_DIR$/.idea/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-07-29__3_12__________.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-07-29_오후_3_12,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Login.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Login.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CreateFunding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CreateFunding.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/login/LoginTab.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/LoginTab.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/login/SignUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/SignUp.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+      </list>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="384f4e38-d32f-40d7-b9f2-e573c473e1c6" />
-        <option name="url" value="https://github.com/Fin-tech-2/Client.git" />
-      </UrlAndAccount>
-    </option>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2TEVgQqcqeN6mOVASETpyih9qcL" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2TPPpMb1yLFFUf0jY9xxnPUhqQ8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/kje04/OneDrive/문서/GitHub/Fintech_PJ/Client",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\kje04\\OneDrive\\문서\\GitHub\\Fintech_PJ\\Client\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kje04/container-capstone/front&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\kje04\\바탕 화면\\Client\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kje04\바탕 화면\Client\src\pages\login" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="디폴트 작업">
-      <changelist id="da7ebc32-4e27-4009-a1ce-57465a2c28cc" name="변경" comment="" />
-      <created>1690608337417</created>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="763476be-c6c0-43d5-bb6f-ef542fcc8bb9" name="Changes" comment="" />
+      <created>1690941925937</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1690608337417</updated>
-      <workItem from="1690608338891" duration="1822000" />
-      <workItem from="1690610625105" duration="721000" />
-      <workItem from="1690611544613" duration="46000" />
+      <updated>1690941925937</updated>
+      <workItem from="1690941926901" duration="542000" />
+      <workItem from="1690942610720" duration="14397000" />
+      <workItem from="1691025326124" duration="12276000" />
+      <workItem from="1691141514565" duration="6012000" />
+      <workItem from="1691193801335" duration="9291000" />
     </task>
-    <task id="LOCAL-00001" summary="커밋 및 푸시 확인">
-      <created>1690609057062</created>
+    <task id="LOCAL-00001" summary="로그인/회원가입 페이지 구현">
+      <created>1691147059056</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1690609057062</updated>
+      <updated>1691147059056</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="헤더/푸터 App.tsx에서 한번에 관리">
+      <created>1691147449035</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1691147449035</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,7 +128,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="커밋 및 푸시 확인" />
-    <option name="LAST_COMMIT_MESSAGE" value="커밋 및 푸시 확인" />
+    <MESSAGE value="로그인/회원가입 페이지 구현" />
+    <MESSAGE value="헤더/푸터 App.tsx에서 한번에 관리" />
+    <option name="LAST_COMMIT_MESSAGE" value="헤더/푸터 App.tsx에서 한번에 관리" />
   </component>
 </project>

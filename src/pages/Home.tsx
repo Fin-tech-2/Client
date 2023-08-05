@@ -3,6 +3,7 @@ import SearchBar from "../components/SearchBar";
 import PreviewForm from "../components/PreviewForm";
 import { PreviewData } from "../types";
 import Category from "../components/Category";
+import Header from "../components/Header";
 
 const Home = () => {
   const dummyData: PreviewData[] = [
@@ -51,7 +52,9 @@ const Home = () => {
   ];
 
   return (
+
     <div className="Home">
+      <Header/>
       <main>
         <div className="banner">
           <div className="top"></div>

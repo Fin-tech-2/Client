@@ -1,3 +1,4 @@
+import Header from "../components/Header";
 import "./../css/CreateFunding.scss";
 import { useEffect, useState } from "react";
 import { FundingData } from "../types";
@@ -38,6 +39,7 @@ const CreateFunding = () => {
   return (
     <div>
       <div className="CreateFunding">
+        <Header/>
         <div className="form">
           <table>
             <tr>
