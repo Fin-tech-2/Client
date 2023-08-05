@@ -25,3 +25,32 @@
     }
   }
 }
+
+@media (max-width: 400px) {
+  .Category {
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 0px;
+      list-style: none;
+
+      li {
+        display: flex;
+        align-items: center;
+        border: 1px solid;
+        border-radius: 30px;
+        padding: 5px 10px 5px 10px;
+        font-size: 15px;
+
+        .icon {
+          padding-right: 5px;
+          font-size: 15px;
+        }
+
+        &:hover {
+          color: #64a346;
+        }
+      }
+    }
+  }
+}
