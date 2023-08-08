@@ -2,12 +2,15 @@ import "../../css/Login.scss";
 import React, { useState } from "react";
 import { Button, Form, Input } from "antd";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 type FieldType = {
   email?: string;
   password?: string;
 };
 const Login = () => {
+  const navigate = useNavigate();
+
   const [inputs, setInputs] = useState<FieldType>({
     email: "",
     password: "",
@@ -25,7 +28,7 @@ const Login = () => {
 
   const loginHandler = () => {
     const option = {
-      url: "/member/save",
+      url: "/member/login",
       method: "POST",
       data: {
         memberEmail: inputs.email,
@@ -33,9 +36,16 @@ const Login = () => {
       },
     };
 
-    axios(option).then((res) => {
-      console.log("로그인 성공");
-    });
+    axios(option)
+      .then((res) => {
+        console.log(res.data);
+        sessionStorage.setItem("name", res.data.memberName);
+        sessionStorage.setItem("email", res.data.memberEmail);
+        navigate("/");
+      })
+      .catch((err) => {
+        alert("로그인 실패 이메일이나 비밀번호를 다시한번 확인해 주세요.");
+      });
     console.log(inputs);
   };
 

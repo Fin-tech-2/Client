@@ -1,12 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./../css/Header.scss";
 import { useNavigate } from "react-router-dom";
 const Header = () => {
   const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
   const goLoginPage = () => {
-        navigate('./login');
+    navigate("/login");
+  };
+
+  useEffect(() => {
+    const name = sessionStorage.getItem("name");
+    if (name != null) {
+      setIsLogin(true);
+    } else {
+      setIsLogin(false);
     }
+  });
+
+  const logOutHandeler = () => {
+    alert("로그아웃 되었습니다.");
+    sessionStorage.clear();
+    setIsLogin(false);
+  };
 
   return (
     <header className="Header">
@@ -48,14 +63,13 @@ const Header = () => {
                 펀딩등록
               </li>
               <li>마이페이지</li>
-                <li onClick={goLoginPage} >로그인/회원가입</li> {/*백엔드 구현 전 개발 편의성 위함*/}
-              <li>로그아웃</li>
+              <li onClick={logOutHandeler}>로그아웃</li>
             </ul>
           </>
         ) : (
           <>
             <ul>
-              <li>로그인/회원가입</li>
+              <li onClick={goLoginPage}>로그인/회원가입</li>
             </ul>
           </>
         )}
