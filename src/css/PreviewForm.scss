@@ -25,12 +25,15 @@
     justify-content: space-evenly;
     align-items: flex-end;
     .percentage {
-      color: #1bde2e;
+      color: #2e2e2e;
+      text-shadow: -1px 0px #ebff00, 0px 1px #ebff00, 1px 0px #ebff00,
+        0px -1px #ebff00;
       font-size: 20px;
     }
 
     .dday {
-      background-color: #acde84;
+      color: #ebff00;
+      background-color: #2e2e2e;
       border-radius: 30px;
       padding: 3px 7px 3px 7px;
     }

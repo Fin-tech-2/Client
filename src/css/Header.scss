@@ -14,29 +14,14 @@
   cursor: pointer;
 
   img {
-    width: 40px;
+    width: 50px;
     padding: 10px 10px 10px 10px;
   }
 
   .name {
-    font-size: 10px;
-    display: grid;
-    color: #335323;
+    font-size: 40px;
+    color: #2e2e2e;
 
-    .name_top {
-      display: flex;
-      justify-content: flex-start;
-      align-items: flex-end;
-    }
-    .name_bottom {
-      display: flex;
-      justify-content: flex-start;
-      align-items: flex-end;
-      margin-top: 5px;
-    }
-    .highlight {
-      font-size: 20px;
-    }
     p {
       margin: 0px;
     }

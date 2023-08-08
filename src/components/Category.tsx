@@ -3,6 +3,8 @@ import {
   AiOutlineHome,
   AiOutlineRise,
   AiOutlineBank,
+  AiOutlineWallet,
+  AiOutlineCheckCircle,
 } from "react-icons/ai";
 import "./../css/Category.scss";
 const Category = () => {
@@ -11,15 +13,23 @@ const Category = () => {
       <ul>
         <li>
           <AiOutlineStar className="icon" />
-          펀드!!
+          재테크
         </li>
         <li>
           <AiOutlineHome className="icon" />
-          부동산
+          주거
+        </li>
+        <li>
+          <AiOutlineWallet className="icon" />
+          소비지출
+        </li>
+        <li>
+          <AiOutlineCheckCircle className="icon" />
+          신용관리
         </li>
         <li>
           <AiOutlineRise className="icon" />
-          주식
+          재무설계
         </li>
         <li>
           <AiOutlineBank className="icon" />

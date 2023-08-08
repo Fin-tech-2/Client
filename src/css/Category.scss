@@ -1,6 +1,6 @@
 .Category {
   margin-top: 50px;
-  color: #474747;
+  color: #2e2e2e;
   ul {
     display: flex;
     justify-content: space-evenly;
@@ -20,7 +20,8 @@
       }
 
       &:hover {
-        color: #64a346;
+        background-color: #2e2e2e;
+        color: #ebff00;
       }
     }
   }
@@ -29,6 +30,7 @@
 @media (max-width: 400px) {
   .Category {
     ul {
+      flex-flow: wrap;
       display: flex;
       justify-content: space-evenly;
       padding: 0px;
@@ -40,6 +42,7 @@
         border: 1px solid;
         border-radius: 30px;
         padding: 5px 10px 5px 10px;
+        margin-top: 10px;
         font-size: 15px;
 
         .icon {
@@ -48,7 +51,8 @@
         }
 
         &:hover {
-          color: #64a346;
+          background-color: #2e2e2e;
+          color: #ebff00;
         }
       }
     }

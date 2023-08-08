@@ -39,7 +39,7 @@ const CreateFunding = () => {
   return (
     <div>
       <div className="CreateFunding">
-        <Header/>
+        <Header />
         <div className="form">
           <table>
             <tr>
@@ -98,9 +98,11 @@ const CreateFunding = () => {
                   name="category"
                   onChange={inputsHandler}
                 >
-                  <option>펀드</option>
-                  <option>부동산</option>
-                  <option>주식</option>
+                  <option>재테크</option>
+                  <option>주거</option>
+                  <option>소비지출</option>
+                  <option>신용관리</option>
+                  <option>재무관리</option>
                   <option>금융권 취업</option>
                 </select>
               </td>

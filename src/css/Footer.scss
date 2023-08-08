@@ -1,15 +1,28 @@
 .Footer {
-  background-color: #dadada;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  left: 0px;
-  bottom: 0px;
-  width: 100%;
-  height: 100px;
+  background-color: #2e2e2e;
   margin-top: 100px;
-}
 
-.content {
-  color: white;
+  .content {
+    display: grid;
+    color: white;
+
+    .top {
+      color: #ebff00;
+      padding-top: 10px;
+      font-size: 20px;
+    }
+
+    .bottom {
+      font-size: 15px;
+    }
+
+    .logo {
+      text-align: end;
+
+      img {
+        width: 8%;
+        text-align: end;
+      }
+    }
+  }
 }

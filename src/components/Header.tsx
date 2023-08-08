@@ -38,17 +38,7 @@ const Header = () => {
           />
         </div>
 
-        <div className="name">
-          <div className="name_top">
-            <p className="highlight">시</p>
-            <p>니어들의</p>
-          </div>
-          <div className="name_bottom">
-            <p className="highlight">금</p>
-            <p>융 스피</p>
-            <p className="highlight">치</p>
-          </div>
-        </div>
+        <div className="name">시금치</div>
       </div>
 
       <nav className="navigation">
