@@ -21,6 +21,7 @@ const Header = () => {
     alert("로그아웃 되었습니다.");
     sessionStorage.clear();
     setIsLogin(false);
+    navigate("/", { replace: true });
   };
 
   return (
@@ -33,7 +34,7 @@ const Header = () => {
       >
         <div className="logo">
           <img
-            src={process.env.PUBLIC_URL + `assets/Logo.svg`}
+            src={process.env.PUBLIC_URL + `/assets/Logo.svg`}
             alt="로고이미지"
           />
         </div>

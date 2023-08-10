@@ -7,7 +7,7 @@ const Footer = () => {
         <p className="bottom">지금부터 인생 제 2막을 펼쳐보세요.</p>
         <div className="logo">
           <img
-            src={process.env.PUBLIC_URL + `assets/footerLogo.svg`}
+            src={process.env.PUBLIC_URL + `/assets/footerLogo.svg`}
             alt="푸터로고이미지"
           />
         </div>

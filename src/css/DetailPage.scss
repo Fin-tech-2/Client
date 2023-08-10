@@ -1,0 +1,148 @@
+.DetailPage {
+  .form {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+
+    .left {
+      display: grid;
+
+      .detail {
+        .thumbnail {
+          width: 500px;
+        }
+        .notice {
+          background-color: #e9e9e9;
+          border-radius: 5px;
+          color: #8b8b8b;
+          font-size: 12px;
+          padding: 20px 5px 20px 5px;
+        }
+        .event {
+          display: grid;
+          border: 1px solid gray;
+          border-radius: 5px;
+          padding: 5px 5px 5px 5px;
+          font-size: 12px;
+
+          .event_title {
+            display: flex;
+            .event_title_1 {
+              color: #8b8b8b;
+            }
+            .event_title_2 {
+              color: #4f5600;
+              margin-left: 10px;
+            }
+          }
+          .event_content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+        }
+      }
+      .about_project {
+        padding-top: 20px;
+        font-size: 20px;
+        .image-wrapper {
+          max-height: 400px; // 기본값 (접혀있는 상태)
+          overflow: hidden;
+
+          &.is-more-view {
+            max-height: none; // 펼쳐있는 상태면 이미지 길이 만큼
+          }
+        }
+
+        .more-view-button-wrapper {
+          position: relative;
+
+          &::before {
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            bottom: 100%;
+            height: 50px; // 기본값 (그라데이션 높이)
+            background: linear-gradient(
+              rgba(255, 255, 255, 0) 0%,
+              rgb(255, 255, 255) 90%
+            );
+            content: "";
+          }
+
+          &.is-more-view::before {
+            height: auto; // 펼쳐있는 상태
+          }
+
+          .project_button {
+            font-family: GangwonState;
+            background-color: #2e2e2e;
+            color: #ebff00;
+            border: 0;
+            width: 500px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .right {
+      display: grid;
+      margin-left: 50px;
+      width: 350px;
+      .payment_form {
+        .top {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 18px;
+        }
+        .mid {
+          font-size: 10px;
+          color: #828282;
+        }
+        .btm {
+          font-size: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          p {
+            font-size: 13px;
+          }
+
+          .percentage {
+            color: #8f8f8f;
+            background-color: #f2f4f6;
+            border-radius: 30px;
+            padding: 3px 7px 3px 7px;
+          }
+          .dday {
+            color: #ebff00;
+            background-color: #2e2e2e;
+            border-radius: 30px;
+            padding: 3px 7px 3px 7px;
+          }
+        }
+        .pay {
+          margin-top: 10px;
+          button {
+            font-family: GangwonState;
+            background-color: #ebff00;
+            border: 0px;
+            width: 350px;
+            font-size: 25px;
+            padding: 5px 0px 5px 0px;
+            cursor: pointer;
+          }
+        }
+      }
+      .about_instructor {
+      }
+      .reward {
+      }
+    }
+  }
+}

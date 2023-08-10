@@ -4,6 +4,7 @@ export interface PreviewData {
   price: string;
   dday: string;
   title: string;
+  thumbnail: string;
 }
 
 export interface FundingData {

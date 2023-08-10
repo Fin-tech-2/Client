@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { PreviewData } from "../types";
 import "./../css/PreviewForm.scss";
 interface PreviewFormProps {
@@ -5,13 +6,19 @@ interface PreviewFormProps {
 }
 
 const PreviewForm = ({ data }: PreviewFormProps) => {
+  const navigate = useNavigate();
+
+  const goDetailPage = (it: PreviewData) => () => {
+    navigate(`/detail-page/${it.id}`);
+    sessionStorage.setItem("data", JSON.stringify(it));
+  };
   return (
     <div className="PreviewForm">
       {data.map((it) => (
         <div key={it.id}>
-          <div className="preview_wrapper">
+          <div className="preview_wrapper" onClick={goDetailPage(it)}>
             <div className="top">
-              <img src={process.env.PUBLIC_URL + `assets/dummyimg.svg`} />
+              <img src={process.env.PUBLIC_URL + `${it.thumbnail}`} />
             </div>
             <div className="mid">
               <p className="percentage">{it.percentage}% 달성</p>
