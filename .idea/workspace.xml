@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="763476be-c6c0-43d5-bb6f-ef542fcc8bb9" name="Changes" comment="로그인 화면 리팩토링">
+    <list default="true" id="763476be-c6c0-43d5-bb6f-ef542fcc8bb9" name="Changes" comment="! 추가">
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-07-29__3_12__________.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-07-29_오후_3_12,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Category.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Category.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Login.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Login.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/Login.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,23 +40,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/kje04/container-capstone/front&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\kje04\\바탕 화면\\Client\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/kje04/OneDrive/문서/카카오톡 받은 파일/Client(0811)",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\kje04\\바탕 화면\\FintechProject\\Client\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kje04\바탕 화면\FintechProject\Client\src\css" />
+      <recent name="C:\Users\kje04\바탕 화면\FintechProject\Client\src\pages" />
+      <recent name="C:\Users\kje04\바탕 화면\FintechProject\Client\public\assets" />
       <recent name="C:\Users\kje04\바탕 화면\Client\src\pages\login" />
     </key>
   </component>
@@ -86,7 +92,10 @@
       <workItem from="1690942610720" duration="14397000" />
       <workItem from="1691025326124" duration="12276000" />
       <workItem from="1691141514565" duration="6012000" />
-      <workItem from="1691193801335" duration="10584000" />
+      <workItem from="1691193801335" duration="12055000" />
+      <workItem from="1691217461693" duration="5907000" />
+      <workItem from="1691496411492" duration="2150000" />
+      <workItem from="1691765435641" duration="1495000" />
     </task>
     <task id="LOCAL-00001" summary="로그인/회원가입 페이지 구현">
       <created>1691147059056</created>
@@ -109,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691209453714</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="! 추가">
+      <created>1691213235700</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1691213235700</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +146,7 @@
     <MESSAGE value="로그인/회원가입 페이지 구현" />
     <MESSAGE value="헤더/푸터 App.tsx에서 한번에 관리" />
     <MESSAGE value="로그인 화면 리팩토링" />
-    <option name="LAST_COMMIT_MESSAGE" value="로그인 화면 리팩토링" />
+    <MESSAGE value="! 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="! 추가" />
   </component>
 </project>

@@ -8,6 +8,10 @@ const Header = () => {
     navigate("/login");
   };
 
+  const goMyPage = () => {
+    navigate("/my-page");
+  };
+
   useEffect(() => {
     const name = sessionStorage.getItem("name");
     if (name != null) {
@@ -53,7 +57,7 @@ const Header = () => {
               >
                 펀딩등록
               </li>
-              <li>마이페이지</li>
+              <li onClick={goMyPage}>마이페이지</li>
               <li onClick={logOutHandeler}>로그아웃</li>
             </ul>
           </>
