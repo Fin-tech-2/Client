@@ -30,17 +30,10 @@ const CreateFunding = () => {
     const { name, type } = e.target;
 
     if (type === "file") {
-      if (name === "thumbnail") {
-        setInputs({
-          ...inputs,
-          thumbnail: e.target.files[0],
-        });
-      } else if (name === "introductionImg") {
-        setInputs({
-          ...inputs,
-          introductionImg: e.target.files[0],
-        });
-      }
+      setInputs({
+        ...inputs,
+        [name]: e.target.files[0],
+      });
     } else {
       setInputs({
         ...inputs,
