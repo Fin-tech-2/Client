@@ -29,7 +29,7 @@ const InterestTab = forwardRef((props, ref) => {
     ];
 
     return (
-        <div className="interest">
+        <div>
             <List
                 grid={{ gutter: 16, column: 3 }}
                 dataSource={data}
