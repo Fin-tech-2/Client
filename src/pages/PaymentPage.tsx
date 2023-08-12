@@ -1,9 +1,24 @@
 import { Checkbox } from "antd";
 import Header from "../components/Header";
 import "./../css/PaymentPage.scss";
+import { useState } from "react";
 const PaymentPage = () => {
   const dataString = sessionStorage.getItem("data");
   const data = dataString ? JSON.parse(dataString) : null;
+  const [activeButton, setActiveButton] = useState<string | null>(null);
+
+  const handleButtonClick = (label: string) => {
+    setActiveButton(label);
+  };
+
+  const buttons = [
+    "카드 결제",
+    "무통장 입금",
+    "카카오 페이",
+    "네이버 페이",
+    "토스 페이",
+  ];
+
   return (
     <div className="PaymentPage">
       <Header />
@@ -42,11 +57,17 @@ const PaymentPage = () => {
             <div className="title head">결제 방식</div>
             <hr />
             <div className="button-wrap">
-              <button>카드 결제</button>
-              <button>무통장 입금</button>
-              <button>카카오 페이</button>
-              <button>네이버 페이</button>
-              <button>토스 페이</button>
+              {buttons.map((btn) => (
+                <button
+                  key={btn}
+                  onClick={() => handleButtonClick(btn)}
+                  style={{
+                    border: activeButton === btn ? "2px solid gray" : "",
+                  }}
+                >
+                  {btn}
+                </button>
+              ))}
             </div>
           </div>
           <div className="check">
