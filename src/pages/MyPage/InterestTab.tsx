@@ -1,27 +1,30 @@
 import React, { forwardRef } from 'react';
 import { Card, List } from 'antd';
 import "../../css/MyPage.scss";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const InterestTab = forwardRef((props, ref) => {
-
     const navigate = useNavigate();
-    const goDetailPage = () => {
-        navigate("/detail-page/1");
-    }
+
+    const goDetailPage = (id: number) => {
+        navigate(`/detail-page/${id}`);
+    };
+
     const data = [
         {
-            title: '부동산 천재의 어쩌구저쩌구',
+            id: 1,
+            title: '부동산 천재의 어쩌구 저쩌구',
             thumbnail: '/assets/interest.svg',
         },
         {
-            title: '부동산 천재의 어쩌구저쩌구',
+            id: 2,
+            title: '부동산 천재의 금나와라 뚝딱',
             thumbnail: '/assets/interest.svg',
         },
         {
-            title: '부동산 천재의 어쩌구저쩌구',
+            id: 3,
+            title: '부동산 성공시키기!',
             thumbnail: '/assets/interest.svg',
-
         },
     ];
 
@@ -33,7 +36,12 @@ const InterestTab = forwardRef((props, ref) => {
                 renderItem={(item) => (
                     <List.Item>
                         <Card title={item.title}>
-                            <img className="content" src={item.thumbnail} alt="Thumbnail" onClick={goDetailPage} />
+                            <img
+                                className="content"
+                                src={item.thumbnail}
+                                alt="Thumbnail"
+                                onClick={() => goDetailPage(item.id)}
+                            />
                         </Card>
                     </List.Item>
                 )}
