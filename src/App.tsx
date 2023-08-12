@@ -8,25 +8,27 @@ import SearchId from "./pages/login/SearchId";
 import SearchPw from "./pages/login/SearchPw";
 import DetailPage from "./pages/DetailPage";
 import MyPage from "./pages/MyPage/MyPage";
+import PaymentPage from "./pages/PaymentPage";
 
 function App() {
   return (
-      <BrowserRouter>
-        <div className="App">
-          <div className="app-content">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<LoginTab />} />
-              <Route path="/create-punding" element={<CreateFunding />} />
-              <Route path="/detail-page/:id" element={<DetailPage />} />
-              <Route path="my-page" element={<MyPage />} />
-              <Route path="/searchId" element={<SearchId />} />
-              <Route path="/searchPw" element={<SearchPw />} />
-            </Routes>
-          </div>
-          <Footer />
+    <BrowserRouter>
+      <div className="App">
+        <div className="app-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<LoginTab />} />
+            <Route path="/create-punding" element={<CreateFunding />} />
+            <Route path="/detail-page/:id" element={<DetailPage />} />
+            <Route path="/payment/:id" element={<PaymentPage />} />
+            <Route path="my-page" element={<MyPage />} />
+            <Route path="/searchId" element={<SearchId />} />
+            <Route path="/searchPw" element={<SearchPw />} />
+          </Routes>
         </div>
-      </BrowserRouter>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

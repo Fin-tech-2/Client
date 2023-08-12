@@ -3,8 +3,11 @@ import Header from "../components/Header";
 import "./../css/DetailPage.scss";
 import { AiOutlineRight, AiOutlineShareAlt } from "react-icons/ai";
 import NumberWithComma from "../components/NumberWithComma";
+import { useNavigate } from "react-router-dom";
 
 const DetailPage = () => {
+  const navigate = useNavigate();
+
   const dataString = sessionStorage.getItem("data");
   const data = dataString ? JSON.parse(dataString) : null;
 
@@ -14,6 +17,9 @@ const DetailPage = () => {
     setIsMoreView(!isMoreView);
   };
 
+  const onClickPayment = () => {
+    navigate(`/payment/${data.id}`);
+  };
   return (
     <div className="DetailPage">
       <Header />
@@ -80,11 +86,17 @@ const DetailPage = () => {
                 <p className="dday">{data.dday}</p>
               </div>
               <div className="pay">
-                <button>후원하기</button>
+                <button onClick={onClickPayment}>후원하기</button>
               </div>
             </div>
-            <div className="about_instructor"></div>
-            <div className="reward"></div>
+            <div className="about_instructor">
+              <img
+                src={process.env.PUBLIC_URL + `/assets/lectureprofile.svg`}
+              />
+            </div>
+            <div className="reward">
+              <img src={process.env.PUBLIC_URL + `/assets/reward.svg`} />
+            </div>
           </div>
         </div>
       </div>
