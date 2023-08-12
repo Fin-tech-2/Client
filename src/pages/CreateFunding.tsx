@@ -6,23 +6,41 @@ import { FundingData } from "../types";
 const CreateFunding = () => {
   const [inputs, setInputs] = useState<FundingData>({
     title: "",
+    content: "",
     cost: "",
     start: "",
     end: "",
     thumbnail: null,
+    introductionImg: null,
     category: "",
   });
 
-  const { title, cost, start, end, thumbnail, category } = inputs;
+  const {
+    title,
+    content,
+    cost,
+    start,
+    end,
+    thumbnail,
+    introductionImg,
+    category,
+  } = inputs;
 
   const inputsHandler = (e: any) => {
     const { name, type } = e.target;
 
     if (type === "file") {
-      setInputs({
-        ...inputs,
-        thumbnail: e.target.files[0],
-      });
+      if (name === "thumbnail") {
+        setInputs({
+          ...inputs,
+          thumbnail: e.target.files[0],
+        });
+      } else if (name === "introductionImg") {
+        setInputs({
+          ...inputs,
+          introductionImg: e.target.files[0],
+        });
+      }
     } else {
       setInputs({
         ...inputs,
@@ -52,6 +70,17 @@ const CreateFunding = () => {
                 />
               </td>
             </tr>
+            <tr>
+              <td className="head">강의 소개</td>
+              <td>
+                <textarea
+                  className="input"
+                  name="content"
+                  onChange={inputsHandler}
+                />
+              </td>
+            </tr>
+
             <tr>
               <td className="head">목표금액</td>
               <td>
@@ -84,8 +113,20 @@ const CreateFunding = () => {
               <td className="head">썸네일</td>
               <td>
                 <input
-                  className="input thumbnail"
+                  className="input file"
                   type="file"
+                  name="thumbnail"
+                  onChange={inputsHandler}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td className="head">강의 소개 이미지</td>
+              <td>
+                <input
+                  className="input file"
+                  type="file"
+                  name="introductionImg"
                   onChange={inputsHandler}
                 />
               </td>

@@ -9,9 +9,12 @@ export interface PreviewData {
 
 export interface FundingData {
   title: string;
+  content: string;
   cost: string;
   start: string;
   end: string;
   thumbnail: File | null;
+  introductionImg: File | null;
+
   category: string;
 }
