@@ -2,14 +2,18 @@ import Header from "../components/Header";
 import "./../css/CreateFunding.scss";
 import { useEffect, useState } from "react";
 import { FundingData } from "../types";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CreateFunding = () => {
+  const navigate = useNavigate();
   const [inputs, setInputs] = useState<FundingData>({
     title: "",
     content: "",
-    cost: "",
-    start: "",
-    end: "",
+    goalPrice: "",
+    price: "",
+    startdate: "",
+    enddate: "",
     thumbnail: null,
     introductionImg: null,
     category: "",
@@ -18,9 +22,10 @@ const CreateFunding = () => {
   const {
     title,
     content,
-    cost,
-    start,
-    end,
+    goalPrice,
+    price,
+    startdate,
+    enddate,
     thumbnail,
     introductionImg,
     category,
@@ -43,8 +48,27 @@ const CreateFunding = () => {
   };
 
   const createHandler = () => {
+    const option = {
+      url: "/api/articles",
+      method: "POST",
+      data: {
+        title: title,
+        content: content,
+        goalprice: goalPrice,
+        price: price,
+        startdate: startdate,
+        enddate: enddate,
+        thumbnail: thumbnail?.name,
+        introductionimg: introductionImg?.name,
+        category: category,
+      },
+    };
     //axios 처리
-    console.log(inputs);
+
+    axios(option).then((res) => {
+      alert("펀딩 등록에 성공하였습니다!");
+      navigate("/", { replace: true });
+    });
   };
 
   return (
@@ -77,16 +101,32 @@ const CreateFunding = () => {
             <tr>
               <td className="head">목표금액</td>
               <td>
-                <input className="input" name="cost" onChange={inputsHandler} />
+                <input
+                  className="input"
+                  name="goalPrice"
+                  onChange={inputsHandler}
+                />
               </td>
             </tr>
+
+            <tr>
+              <td className="head">1인당 금액</td>
+              <td>
+                <input
+                  className="input"
+                  name="price"
+                  onChange={inputsHandler}
+                />
+              </td>
+            </tr>
+
             <tr>
               <td className="head">시작날짜</td>
               <td>
                 <input
                   className="input"
                   type="date"
-                  name="start"
+                  name="startdate"
                   onChange={inputsHandler}
                 />
               </td>
@@ -97,7 +137,7 @@ const CreateFunding = () => {
                 <input
                   className="input"
                   type="date"
-                  name="end"
+                  name="enddate"
                   onChange={inputsHandler}
                 />
               </td>

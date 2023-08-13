@@ -5,16 +5,17 @@ export interface PreviewData {
   dday: string;
   title: string;
   thumbnail: string;
+  category: string;
 }
 
 export interface FundingData {
   title: string;
   content: string;
-  cost: string;
-  start: string;
-  end: string;
+  goalPrice: string;
+  price: string;
+  startdate: string;
+  enddate: string;
   thumbnail: File | null;
   introductionImg: File | null;
-
   category: string;
 }

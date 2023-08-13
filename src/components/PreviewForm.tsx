@@ -3,22 +3,34 @@ import { PreviewData } from "../types";
 import "./../css/PreviewForm.scss";
 interface PreviewFormProps {
   data: PreviewData[];
+  category: string;
 }
 
-const PreviewForm = ({ data }: PreviewFormProps) => {
+const PreviewForm = ({ data, category }: PreviewFormProps) => {
   const navigate = useNavigate();
 
   const goDetailPage = (it: PreviewData) => () => {
     navigate(`/detail-page/${it.id}`);
     sessionStorage.setItem("data", JSON.stringify(it));
   };
+
+  // 필터링된 데이터를 저장하는 변수
+  const filteredData = category
+    ? data.filter((item) => item.category === category)
+    : data;
+
   return (
     <div className="PreviewForm">
-      {data.map((it) => (
+      {filteredData.map((it) => (
         <div key={it.id}>
           <div className="preview_wrapper" onClick={goDetailPage(it)}>
             <div className="top">
-              <img src={process.env.PUBLIC_URL + `${it.thumbnail}`} />
+              <img
+                src={
+                  process.env.PUBLIC_URL + `assets/thumbnail/${it.thumbnail}`
+                }
+                alt="Thumbnail"
+              />
             </div>
             <div className="mid">
               <p className="percentage">{it.percentage}% 달성</p>

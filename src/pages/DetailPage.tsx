@@ -1,25 +1,63 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import "./../css/DetailPage.scss";
 import { AiOutlineRight, AiOutlineShareAlt } from "react-icons/ai";
 import NumberWithComma from "../components/NumberWithComma";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
+import { FundingData } from "../types";
 
 const DetailPage = () => {
   const navigate = useNavigate();
 
-  const dataString = sessionStorage.getItem("data");
-  const data = dataString ? JSON.parse(dataString) : null;
+  const params = useParams();
+  const id = params.id;
 
   const [isMoreView, setIsMoreView] = useState(false);
-  console.log(data);
+  const [data, setData] = useState<FundingData | undefined>();
+
   const onClickMoreView = () => {
     setIsMoreView(!isMoreView);
   };
 
   const onClickPayment = () => {
-    navigate(`/payment/${data.id}`);
+    navigate(`/payment/${id}`);
   };
+
+  useEffect(() => {
+    const option = {
+      url: `/api/articles/${id}`,
+      method: "GET",
+    };
+    axios(option).then((res) => {
+      console.log(res.data);
+      const project = {
+        title: res.data.title,
+        content: res.data.content,
+        goalPrice: res.data.goalprice,
+        price: res.data.price,
+        startdate: res.data.startdate,
+        enddate: res.data.enddate,
+        thumbnail: res.data.thumbnail,
+        introductionImg: res.data.introductionimg,
+        category: res.data.category,
+      };
+
+      setData(project);
+    });
+  }, []);
+
+  const calculateDday = (startdate?: string, enddate?: string): string => {
+    if (!startdate || !enddate) return ""; // 값을 받지 못했을 때 빈 문자열 반환
+
+    const startDate = new Date(startdate);
+    const endDate = new Date(enddate);
+
+    const diffInMs = endDate.getTime() - startDate.getTime();
+
+    return String(diffInMs / (1000 * 60 * 60 * 24));
+  };
+
   return (
     <div className="DetailPage">
       <Header />
@@ -28,7 +66,9 @@ const DetailPage = () => {
           <div className="detail">
             <img
               className="thumbnail"
-              src={process.env.PUBLIC_URL + data.thumbnail}
+              src={
+                process.env.PUBLIC_URL + `/assets/thumbnail/${data?.thumbnail}`
+              }
             />
             <p className="notice">펀딩을 통해 출시된 강의 혜택을 제공합니다.</p>
             <div className="event">
@@ -47,10 +87,26 @@ const DetailPage = () => {
             <div
               className={`image-wrapper ${isMoreView ? "is-more-view" : ""}`}
             >
-              <img
-                className="project_img"
-                src={process.env.PUBLIC_URL + `/assets/detail_project.svg`}
-              />
+              {data?.introductionImg == null ? (
+                <>
+                  {" "}
+                  <img
+                    className="project_img"
+                    src={process.env.PUBLIC_URL + `/assets/detail_project.svg`}
+                  />
+                </>
+              ) : (
+                <>
+                  {" "}
+                  <img
+                    className="project_img"
+                    src={
+                      process.env.PUBLIC_URL +
+                      `/assets/introductionImg/${data?.introductionImg}`
+                    }
+                  />
+                </>
+              )}
             </div>
             <div
               className={`more-view-button-wrapper ${
@@ -69,21 +125,18 @@ const DetailPage = () => {
           <div className="payment">
             <div className="payment_form">
               <div className="top">
-                <p>{data.title}</p>
+                <p>{data?.title}</p>
                 <AiOutlineShareAlt />
               </div>
               <div className="mid">
-                <p>
-                  여기는 간단 소개글 여기는 간단 소개글 여기는 간단 소개글
-                  여기는 간단 소개글 여기는 간단 소개글 여기는 간단 소개글
-                </p>
+                <p>{data?.content}</p>
               </div>
               <div className="btm">
-                <NumberWithComma
-                  number={Number(data.percentage) * Number(data.price)}
-                />
-                <p className="percentage">{data.percentage}% 달성</p>
-                <p className="dday">{data.dday}</p>
+                {data?.price}
+                <p className="percentage">98% 달성</p>
+                <p className="dday">
+                  {calculateDday(data?.startdate, data?.enddate)}
+                </p>
               </div>
               <div className="pay">
                 <button onClick={onClickPayment}>후원하기</button>
