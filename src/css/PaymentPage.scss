@@ -6,26 +6,31 @@
     background-color: #f7f7f7;
     border-radius: 15px;
     width: 30%;
-    margin: 0 auto;
-    margin-top: 50px;
+    margin: 50px auto 0;
 
     .payment-title {
       width: 80%;
       font-size: 25px;
-      margin: 20px 0px 0px 0px;
+      margin-top: 20px;
     }
+
     .form-list {
       display: grid;
       width: 80%;
 
       .info,
       .pay,
-      .option {
+      .option,
+      .check {
         background-color: white;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 10px 10px 10px 10px;
+        padding: 10px;
         margin-top: 20px;
+      }
 
+      .info,
+      .pay,
+      .option {
         .title {
           font-size: 20px;
         }
@@ -33,6 +38,7 @@
         .table {
           display: flex;
           justify-content: space-between;
+
           .head {
             color: #686868;
             padding-bottom: 10px;
@@ -47,13 +53,14 @@
           display: grid;
           place-items: center;
           grid-template-columns: 1fr 1fr 1fr;
+
           button {
             width: 110px;
             border: 1px solid gray;
             border-radius: 5px;
             background-color: white;
-            padding: 10px 20px 10px 20px;
-            margin: 10px 10px 0px 10px;
+            padding: 10px 20px;
+            margin: 10px;
             cursor: pointer;
           }
         }
@@ -63,18 +70,15 @@
         display: flex;
         justify-content: space-between;
         color: #686868;
-        background-color: white;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 10px 10px 10px 10px;
-        margin-top: 20px;
       }
+
       .pay-button {
-        margin: 20px 0px 20px 0px;
+        margin: 20px 0;
         font-family: GangwonState;
         color: #ebff00;
         background-color: #2e2e2e;
         border: 0;
-        padding: 20px 0px 20px 0px;
+        padding: 20px 0;
         font-size: 20px;
         border-radius: 5px;
         cursor: pointer;

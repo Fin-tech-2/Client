@@ -1,16 +1,18 @@
 .CreateFunding {
   display: grid;
   place-items: center;
+
   .create {
     display: flex;
     margin-top: 40px;
+
     button {
       font-family: "GangwonState";
       font-size: 20px;
       background-color: #92cb76;
+      border: 0;
       border-radius: 5px;
-      border: 0px;
-      padding: 10px 20px 10px 20px;
+      padding: 10px 20px;
       cursor: pointer;
     }
   }
@@ -20,7 +22,7 @@
     justify-content: center;
     align-items: center;
     border: 1px solid #64a346;
-    padding: 20px 10px 20px 10px;
+    padding: 20px 10px;
     margin-top: 50px;
     border-radius: 5px;
     width: 50%;
@@ -30,8 +32,10 @@
       margin: 0 auto;
       border-spacing: 0 40px;
       text-align: center;
+
       tr {
         align-items: center;
+
         .head {
           color: #64a346;
           display: flex;
@@ -40,9 +44,10 @@
         .input {
           border: 1px solid #64a346;
           border-radius: 5px;
-          padding: 10px 0px 10px 0px;
+          padding: 10px 0;
           width: 80%;
         }
+
         .file {
           border: 0;
         }

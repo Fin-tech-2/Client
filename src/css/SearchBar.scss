@@ -1,17 +1,18 @@
 %placeholder {
   font-family: "GangwonState";
-  padding: 20px 0px 20px 0px;
+  padding: 20px 0;
 }
 
 .SearchBar {
   margin-top: 50px;
+
   .bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #eff2f5;
     border-radius: 30px;
-    padding: 5px 20px 5px 20px;
+    padding: 5px 20px;
     margin: 0 auto;
     width: 30%;
 
@@ -29,20 +30,12 @@
       text-align: center;
     }
   }
-}
 
-@media (max-width: 400px) {
-  .SearchBar {
-    margin: 20px 0px 20px 0px;
+  @media (max-width: 400px) {
+    margin: 20px 0;
 
     .bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #eff2f5;
-      border-radius: 30px;
-      padding: 0px 10px 0px 10px;
-      margin: 0 auto;
+      padding: 0 10px;
       width: 70%;
 
       .icon {
@@ -50,12 +43,8 @@
       }
 
       input {
-        flex-grow: 1;
         font-size: 15px;
-        border: 0;
-        background-color: #eff2f5;
-        padding: 10px 0px 10px 0px;
-        text-align: center;
+        padding: 10px 0;
       }
     }
   }

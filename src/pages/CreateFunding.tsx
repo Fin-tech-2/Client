@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import "./../css/CreateFunding.scss";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FundingData } from "../types";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -63,7 +63,6 @@ const CreateFunding = () => {
         category: category,
       },
     };
-    //axios 처리
 
     axios(option).then((res) => {
       alert("펀딩 등록에 성공하였습니다!");

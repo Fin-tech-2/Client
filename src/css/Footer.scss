@@ -6,9 +6,13 @@
     display: grid;
     color: white;
 
+    .top,
+    .bottom {
+      padding-top: 10px;
+    }
+
     .top {
       color: #ebff00;
-      padding-top: 10px;
       font-size: 20px;
     }
 
@@ -21,7 +25,6 @@
 
       img {
         width: 8%;
-        text-align: end;
       }
     }
   }

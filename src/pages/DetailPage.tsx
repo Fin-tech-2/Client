@@ -6,7 +6,7 @@ import NumberWithComma from "../components/NumberWithComma";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { FundingData } from "../types";
-
+import { calculateDday } from "../util/calculateDday";
 const DetailPage = () => {
   const navigate = useNavigate();
 
@@ -29,34 +29,27 @@ const DetailPage = () => {
       url: `/api/articles/${id}`,
       method: "GET",
     };
-    axios(option).then((res) => {
-      console.log(res.data);
-      const project = {
-        title: res.data.title,
-        content: res.data.content,
-        goalPrice: res.data.goalprice,
-        price: res.data.price,
-        startdate: res.data.startdate,
-        enddate: res.data.enddate,
-        thumbnail: res.data.thumbnail,
-        introductionImg: res.data.introductionimg,
-        category: res.data.category,
-      };
+    axios(option)
+      .then((res) => {
+        console.log(res.data);
+        const project = {
+          title: res.data.title,
+          content: res.data.content,
+          goalPrice: res.data.goalprice,
+          price: res.data.price,
+          startdate: res.data.startdate,
+          enddate: res.data.enddate,
+          thumbnail: res.data.thumbnail,
+          introductionImg: res.data.introductionimg,
+          category: res.data.category,
+        };
 
-      setData(project);
-    });
+        setData(project);
+      })
+      .catch(() => {
+        alert("불러오기에 실패하였습니다.");
+      });
   }, []);
-
-  const calculateDday = (startdate?: string, enddate?: string): string => {
-    if (!startdate || !enddate) return ""; // 값을 받지 못했을 때 빈 문자열 반환
-
-    const startDate = new Date(startdate);
-    const endDate = new Date(enddate);
-
-    const diffInMs = endDate.getTime() - startDate.getTime();
-
-    return String(diffInMs / (1000 * 60 * 60 * 24));
-  };
 
   return (
     <div className="DetailPage">
@@ -135,7 +128,7 @@ const DetailPage = () => {
                 {data?.price}
                 <p className="percentage">98% 달성</p>
                 <p className="dday">
-                  {calculateDday(data?.startdate, data?.enddate)}
+                  {`D-` + calculateDday(data?.startdate, data?.enddate)}
                 </p>
               </div>
               <div className="pay">

@@ -1,20 +1,22 @@
 .PreviewForm {
-  flex-wrap: wrap;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 100px;
   width: 90%;
-  margin: 0 auto;
+  margin: 100px auto 0;
 }
 
 .preview_wrapper {
   display: grid;
   margin-top: 50px;
   cursor: pointer;
-  .top {
+
+  .top,
+  .btm {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+
     img {
       width: 70%;
     }
@@ -24,6 +26,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: flex-end;
+
     .percentage {
       color: #2e2e2e;
       text-shadow: -1px 0px #ebff00, 0px 1px #ebff00, 1px 0px #ebff00,
@@ -35,17 +38,12 @@
       color: #ebff00;
       background-color: #2e2e2e;
       border-radius: 30px;
-      padding: 3px 7px 3px 7px;
+      padding: 3px 7px;
     }
   }
 
-  .btm {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    .title {
-      margin: 0px;
-      font-size: 20px;
-    }
+  .btm .title {
+    margin: 0;
+    font-size: 20px;
   }
 }

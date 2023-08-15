@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { PreviewData } from "../types";
 import PreviewForm from "./PreviewForm";
+import { calculateDday } from "../util/calculateDday";
 
 const Category = () => {
   const [data, setData] = useState<PreviewData[]>([]);
@@ -22,35 +23,30 @@ const Category = () => {
       method: "GET",
     };
 
-    axios(option).then((res) => {
-      console.log(res);
-      const transformedData = res.data.map((item: any) => {
-        const dday = calculateDday(item.startdate, item.enddate);
-        return {
-          id: item.id,
-          percentage: "98",
-          price: item.price,
-          dday: `D-${dday}`,
-          title: item.title,
-          thumbnail: item.thumbnail,
-          category: item.category,
-        };
-      });
+    axios(option)
+      .then((res) => {
+        console.log(res);
+        const transformedData = res.data.map((item: any) => {
+          const dday = calculateDday(item.startdate, item.enddate);
+          return {
+            id: item.id,
+            percentage: "98",
+            price: item.price,
+            dday: `D-${dday}`,
+            title: item.title,
+            thumbnail: item.thumbnail,
+            category: item.category,
+          };
+        });
 
-      setData(transformedData);
-    });
+        setData(transformedData);
+      })
+      .catch(() => {
+        console.log("불러오기 실패");
+      });
   }, []);
 
   useEffect(() => {}, [selectCategory]);
-
-  const calculateDday = (startdate: string, enddate: string): string => {
-    const startDate = new Date(startdate);
-    const endDate = new Date(enddate);
-
-    const diffInMs = endDate.getTime() - startDate.getTime();
-
-    return String(diffInMs / (1000 * 60 * 60 * 24));
-  };
 
   const categoryClickHandler = (categoryName: string) => {
     setSelectCategory(categoryName);
