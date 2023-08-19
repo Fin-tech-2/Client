@@ -7,6 +7,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { FundingData } from "../types";
 import { calculateDday } from "../util/calculateDday";
+import { calculatePercentage } from "../util/calculatePercentage";
 const DetailPage = () => {
   const navigate = useNavigate();
 
@@ -15,6 +16,7 @@ const DetailPage = () => {
 
   const [isMoreView, setIsMoreView] = useState(false);
   const [data, setData] = useState<FundingData | undefined>();
+  const [price, setPrice] = useState(0);
 
   const onClickMoreView = () => {
     setIsMoreView(!isMoreView);
@@ -33,6 +35,7 @@ const DetailPage = () => {
       .then((res) => {
         console.log(res.data);
         const project = {
+          id: res.data.id,
           title: res.data.title,
           content: res.data.content,
           goalPrice: res.data.goalprice,
@@ -42,9 +45,11 @@ const DetailPage = () => {
           thumbnail: res.data.thumbnail,
           introductionImg: res.data.introductionimg,
           category: res.data.category,
+          student: res.data.student,
         };
 
         setData(project);
+        setPrice(Number(res.data.price) * res.data.student);
       })
       .catch(() => {
         alert("불러오기에 실패하였습니다.");
@@ -125,8 +130,15 @@ const DetailPage = () => {
                 <p>{data?.content}</p>
               </div>
               <div className="btm">
-                {data?.price}
-                <p className="percentage">98% 달성</p>
+                {NumberWithComma(price)}
+                <p className="percentage">
+                  {calculatePercentage({
+                    goalPrice: Number(data?.goalPrice ?? 0),
+                    price: Number(data?.price ?? 0),
+                    student: data?.student ?? 0,
+                  })}
+                  %
+                </p>
                 <p className="dday">
                   {`D-` + calculateDday(data?.startdate, data?.enddate)}
                 </p>

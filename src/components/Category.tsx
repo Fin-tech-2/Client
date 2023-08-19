@@ -9,12 +9,11 @@ import {
 import "./../css/Category.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { PreviewData } from "../types";
+import { FundingData } from "../types";
 import PreviewForm from "./PreviewForm";
-import { calculateDday } from "../util/calculateDday";
 
 const Category = () => {
-  const [data, setData] = useState<PreviewData[]>([]);
+  const [data, setData] = useState<FundingData[]>([]);
   const [selectCategory, setSelectCategory] = useState<string>("");
 
   useEffect(() => {
@@ -27,15 +26,18 @@ const Category = () => {
       .then((res) => {
         console.log(res);
         const transformedData = res.data.map((item: any) => {
-          const dday = calculateDday(item.startdate, item.enddate);
           return {
             id: item.id,
-            percentage: "98",
-            price: item.price,
-            dday: `D-${dday}`,
             title: item.title,
+            content: item.content,
+            goalPrice: item.goalprice,
+            price: item.price,
+            startdate: item.startdate,
+            enddate: item.enddate,
             thumbnail: item.thumbnail,
+            introductionImg: item.introductionimg,
             category: item.category,
+            student: item.student,
           };
         });
 

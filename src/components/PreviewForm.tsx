@@ -1,15 +1,17 @@
 import { useNavigate } from "react-router-dom";
-import { PreviewData } from "../types";
+import { FundingData } from "../types";
 import "./../css/PreviewForm.scss";
+import { calculateDday } from "../util/calculateDday";
+import { calculatePercentage } from "../util/calculatePercentage";
 interface PreviewFormProps {
-  data: PreviewData[];
+  data: FundingData[];
   category: string;
 }
 
 const PreviewForm = ({ data, category }: PreviewFormProps) => {
   const navigate = useNavigate();
 
-  const goDetailPage = (it: PreviewData) => () => {
+  const goDetailPage = (it: FundingData) => () => {
     navigate(`/detail-page/${it.id}`);
     sessionStorage.setItem("data", JSON.stringify(it));
   };
@@ -33,9 +35,18 @@ const PreviewForm = ({ data, category }: PreviewFormProps) => {
               />
             </div>
             <div className="mid">
-              <p className="percentage">{it.percentage}% 달성</p>
+              <p className="percentage">
+                {calculatePercentage({
+                  goalPrice: Number(it.goalPrice),
+                  price: Number(it.price),
+                  student: it.student,
+                })}
+                % 달성
+              </p>
               <p className="price">{it.price}원</p>
-              <p className="dday">{it.dday}</p>
+              <p className="dday">
+                D-{String(calculateDday(it.startdate, it.enddate))}
+              </p>
             </div>
             <div className="btm">
               <p className="title">{it.title}</p>

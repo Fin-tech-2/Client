@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 const CreateFunding = () => {
   const navigate = useNavigate();
   const [inputs, setInputs] = useState<FundingData>({
+    id: 0,
     title: "",
     content: "",
     goalPrice: "",
@@ -17,6 +18,7 @@ const CreateFunding = () => {
     thumbnail: null,
     introductionImg: null,
     category: "",
+    student: 0,
   });
 
   const {

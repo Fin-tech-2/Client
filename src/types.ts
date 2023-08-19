@@ -1,14 +1,5 @@
-export interface PreviewData {
-  id: number;
-  percentage: string;
-  price: string;
-  dday: string;
-  title: string;
-  thumbnail: string;
-  category: string;
-}
-
 export interface FundingData {
+  id: number;
   title: string;
   content: string;
   goalPrice: string;
@@ -18,4 +9,5 @@ export interface FundingData {
   thumbnail: File | null;
   introductionImg: File | null;
   category: string;
+  student: number;
 }
