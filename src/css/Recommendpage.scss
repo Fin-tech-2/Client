@@ -1,0 +1,54 @@
+.RecommendPage {
+  position: relative;
+  width: calc(100% - 600px);
+  height: 500px;
+  margin: 0 300px;
+  overflow: hidden;
+}
+
+.recommend-wrapper {
+  display: flex;
+  flex-direction: column; // 세로 방향으로 정렬
+  align-items: center; // 가로 방향으로 중앙 정렬
+  height: 100%;
+  justify-content: space-between; // move-text와 select-recommend 사이에 공간을 최대한 활용
+}
+
+.move-text {
+  position: relative; // 상대 위치를 지정하여 move-text 내부의 moving-text가 올바르게 위치하도록 합니다.
+  width: 100%; // 전체 너비를 사용
+  height: 80%; // 전체 높이의 80%를 사용
+  overflow: hidden; // 넘치는 부분 숨기기
+}
+
+.moving-text {
+  position: absolute;
+  cursor: pointer;
+  transition: left 10s ease, top 10s ease;
+  font-size: 24px;
+  user-select: none;
+
+  &.selected {
+    color: rgb(255, 255, 0);
+    text-shadow: 2px 2px 2px gray;
+  }
+}
+
+.select-recommend {
+  width: 100%;
+  text-align: center;
+}
+
+.recommend-btn {
+  margin-top: 50px;
+  button {
+    font-family: GangwonState;
+    border: 0;
+    background-color: #2e2e2e;
+    color: #ebff00;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+  }
+}
