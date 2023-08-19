@@ -136,13 +136,23 @@
         }
         .pay {
           margin-top: 10px;
+          display: flex;
 
-          button {
+          .payBtn {
             font-family: GangwonState;
             background-color: #ebff00;
             border: 0;
-            width: 350px;
+            width: 300px;
             font-size: 25px;
+            padding: 5px 0;
+            cursor: pointer;
+          }
+          .interestBtn {
+            font-family: GangwonState;
+            background-color: gray;
+            border: 0;
+            width: 50px;
+            font-size: 15px;
             padding: 5px 0;
             cursor: pointer;
           }

@@ -30,6 +30,12 @@ const DetailPage = () => {
     navigate(`/payment/${id}`);
   };
 
+  const onClickInterest = () => {
+
+sessionStorage.setItem("interest",String(id));
+alert('관심함에 추가되었습니다!');
+  }
+
   useEffect(() => {
     setIsModalOpen(true);
   }, []);
@@ -182,7 +188,8 @@ const DetailPage = () => {
                 </p>
               </div>
               <div className="pay">
-                <button onClick={onClickPayment}>후원하기</button>
+                <button className="interestBtn" onClick={onClickInterest}> 관심 </button>
+                <button className="payBtn" onClick={onClickPayment}>후원하기</button>
               </div>
             </div>
             <div className="about_instructor">

@@ -2,15 +2,12 @@ import React, { useEffect, useState } from 'react';
 import Header from "../../components/Header";
 import "../../css/MyPage.scss";
 import { Tabs } from 'antd';
-import type { TabsProps } from 'antd';
 import InterestTab from "./InterestTab";
 import PurchaseDetailTab from "./PurchaseDetailTab";
 import MyLectureTab from "./MyLectureTab";
 import {Outlet} from "react-router-dom";
 
-const onChange = (key: string) => {
-    console.log(key);
-};
+const { TabPane } = Tabs;
 
 const MyPage = () => {
     const [userData, setUserData] = useState({
@@ -18,6 +15,9 @@ const MyPage = () => {
         email: '',
         couponCount: 0
     });
+
+    const storedData = sessionStorage.getItem("projectList");
+    const data = storedData ? JSON.parse(storedData) : []; // 문자열을 객체로 변환
 
     useEffect(() => {
         const storedName = sessionStorage.getItem('name');
@@ -32,12 +32,6 @@ const MyPage = () => {
         }
     }, []);
 
-    const items: TabsProps['items'] = [
-        { key: 'interest', label: `관심함`, children: <InterestTab />, },
-        { key: 'purchase-detail', label: `구매내역`, children: <PurchaseDetailTab />, },
-        { key: 'my-lecture', label: `내 강의`, children: <MyLectureTab />, },
-    ];
-
     return (
         <div>
             <Header />
@@ -47,14 +41,27 @@ const MyPage = () => {
                     src={process.env.PUBLIC_URL + `/assets/profile.svg`}
                     alt="Profile"
                 />
+                <div className="contents">
                 <div className="profileText">
                     <h1> {userData.name} </h1>
                     <p> {userData.email} </p><br />
                     <p> 내 쿠폰: {userData.couponCount} </p>
                 </div>
+                <button className="recommendBtn"> 나에게 맞는 추천 서비스 </button>
+                </div>
             </div>
             <div className="myPageTab">
-                <Tabs className="tab" defaultActiveKey="interest" items={items} onChange={onChange} />
+                <Tabs className="tab" defaultActiveKey="interest">
+                    <TabPane key="interest" tab="관심함">
+                        <InterestTab data={data} />
+                    </TabPane>
+                    <TabPane key="purchase-detail" tab="구매내역">
+                        <PurchaseDetailTab />
+                    </TabPane>
+                    <TabPane key="my-lecture" tab="내 강의">
+                        <MyLectureTab />
+                    </TabPane>
+                </Tabs>
             </div>
             <Outlet />
         </div>
