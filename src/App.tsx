@@ -9,9 +9,7 @@ import SearchPw from "./pages/login/SearchPw";
 import DetailPage from "./pages/DetailPage";
 import MyPage from "./pages/MyPage/MyPage";
 import PaymentPage from "./pages/PaymentPage";
-import InterestTab from "./pages/MyPage/InterestTab";
-import MyLectureTab from "./pages/MyPage/MyLectureTab";
-import PurchaseDetailTab from "./pages/MyPage/PurchaseDetailTab";
+import RecommendPage from "./pages/RecommendPage";
 
 function App() {
   return (
@@ -25,12 +23,8 @@ function App() {
             <Route path="/detail-page/:id" element={<DetailPage />} />
             <Route path="/payment/:id" element={<PaymentPage />} />
 
-            <Route path="/my-page" element={<MyPage />}>
-              {/*<Route path="interest" element={<InterestTab />} />*/}
-              {/*<Route path="my-lecture" element={<MyLectureTab />} />*/}
-              {/*<Route path="purchase-detail" element={<PurchaseDetailTab />} />*/}
-            </Route>
-
+            <Route path="/my-page" element={<MyPage />} />
+            <Route path="/recommend-page" element={<RecommendPage />}/>
             <Route path="/searchId" element={<SearchId />} />
             <Route path="/searchPw" element={<SearchPw />} />
           </Routes>

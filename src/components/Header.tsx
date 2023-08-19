@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./../css/Header.scss";
 import { useNavigate } from "react-router-dom";
 const Header = () => {
@@ -28,6 +28,10 @@ const Header = () => {
     navigate("/", { replace: true });
   };
 
+  const goOnRecommend = () =>{
+    navigate('/recommend-page');
+  }
+
   return (
     <header className="Header">
       <div
@@ -47,6 +51,10 @@ const Header = () => {
       </div>
 
       <nav className="navigation">
+        <button className="recommendBtn" onClick={goOnRecommend}>
+          <small>나에게 맞는</small><br/>
+          <span style={{fontWeight: 'bold', fontSize: 15}}>추천 콘텐츠</span>
+        </button>
         {isLogin ? (
           <>
             <ul>

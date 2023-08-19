@@ -5,11 +5,12 @@ import { Tabs } from 'antd';
 import InterestTab from "./InterestTab";
 import PurchaseDetailTab from "./PurchaseDetailTab";
 import MyLectureTab from "./MyLectureTab";
-import {Outlet} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const { TabPane } = Tabs;
 
 const MyPage = () => {
+
     const [userData, setUserData] = useState({
         name: '',
         email: '',
@@ -41,13 +42,10 @@ const MyPage = () => {
                     src={process.env.PUBLIC_URL + `/assets/profile.svg`}
                     alt="Profile"
                 />
-                <div className="contents">
                 <div className="profileText">
                     <h1> {userData.name} </h1>
                     <p> {userData.email} </p><br />
                     <p> 내 쿠폰: {userData.couponCount} </p>
-                </div>
-                <button className="recommendBtn"> 나에게 맞는 추천 서비스 </button>
                 </div>
             </div>
             <div className="myPageTab">
@@ -63,7 +61,6 @@ const MyPage = () => {
                     </TabPane>
                 </Tabs>
             </div>
-            <Outlet />
         </div>
     );
 };

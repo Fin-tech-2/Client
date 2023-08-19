@@ -1,11 +1,27 @@
 import { Checkbox } from "antd";
 import Header from "../components/Header";
 import "./../css/PaymentPage.scss";
-import { useState } from "react";
+import {useEffect, useState} from "react";
+import { Modal } from "antd";
+
 const PaymentPage = () => {
   const dataString = sessionStorage.getItem("data");
   const data = dataString ? JSON.parse(dataString) : null;
   const [activeButton, setActiveButton] = useState<string | null>(null);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  useEffect(() => {
+    setIsModalOpen(false);
+  }, []);
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
 
   const handleButtonClick = (label: string) => {
     setActiveButton(label);
@@ -74,7 +90,31 @@ const PaymentPage = () => {
             <Checkbox />
             <p>(필수) 개인정보 제 3자 제공에 동의합니다</p>
           </div>
-          <button className="pay-button">결제하기</button>
+          <button className="pay-button" onClick={showModal}>결제하기</button>
+          <Modal
+              className="custom-modal"
+              visible={isModalOpen}
+              onOk={handleModalClose}
+              onCancel={handleModalClose}
+              cancelButtonProps={{ style: { display: "none" } }}
+              centered
+          >
+            <div className="popup-content">
+              <h1>멘티님 환영합니다! 🎉</h1>
+              <h2>
+                {" "}
+                평균보다{" "}
+                <span style={{ backgroundColor: "#ebff00", padding: "0 5px" }}>
+              무려 50% 저렴
+            </span>
+                한 가격으로 <br /> 강의를 구매하셨어요!
+              </h2>
+              <p>
+                사람이 더 모이면 리워드가 추가될 수도 있어요 <br /> 공유하고 친구와
+                함께 더 많은 혜택을 누려보세요
+              </p>
+            </div>
+          </Modal>
         </div>
       </div>
     </div>
