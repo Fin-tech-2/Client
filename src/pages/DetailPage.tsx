@@ -153,6 +153,7 @@ const DetailPage = () => {
             </div>
           </div>
           <div className="more_menu"></div>
+          <p>장소안내</p>
           <Map />
         </div>
 
