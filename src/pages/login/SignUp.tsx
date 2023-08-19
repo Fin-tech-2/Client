@@ -46,18 +46,50 @@ const SignUp = () => {
         open({onComplete: moveAddress});
     };
 
+    const [formData, setFormData] = useState<FieldType>({
+        email: '',
+        password: '',
+        passwordCheck: '',
+        name: '',
+        phone: '',
+        addressNumber: '',
+        address: '',
+        addressDetail: ''
+    });
+
+    const handleInputChange = (field: keyof FieldType, value: string) => {
+        setFormData(prevData => ({
+            ...prevData,
+            [field]: value
+        }));
+    };
+
+    const isFormValid = () => {
+        return (
+            formData.email &&
+            formData.password &&
+            formData.passwordCheck &&
+            formData.name &&
+            formData.phone
+        );
+    };
+
     const goOnHome = () => {
-        alert('회원가입 되었습니다.');
-        navigate("/");
+        if (isFormValid()) {
+            alert('회원가입 되었습니다.');
+            navigate("/");
+        } else {
+            alert('입력 정보를 확인해주세요.');
+        }
     }
 
     return (
         <Form>
             <Form.Item<FieldType> name="email" rules={[{required: true}]}>
-                <Input placeholder="이메일" className="emailInput"/>
+                <Input placeholder="이메일" className="emailInput" onChange={e => handleInputChange('email', e.target.value)}/>
             </Form.Item>
             <Form.Item<FieldType> name="password" rules={[{required: true}]}>
-                <Input.Password placeholder="비밀번호" className="pwInput"/>
+                <Input.Password placeholder="비밀번호" className="pwInput" onChange={e => handleInputChange('password', e.target.value)}/>
             </Form.Item>
 
             <Form.Item<FieldType>
@@ -76,14 +108,14 @@ const SignUp = () => {
                     }),
                 ]}
             >
-                <Input.Password placeholder="비밀번호 확인" className="pwInput"/>
+                <Input.Password placeholder="비밀번호 확인" className="pwInput" onChange={e => handleInputChange('passwordCheck', e.target.value)}/>
             </Form.Item>
 
             <Form.Item<FieldType> name="name" rules={[{required: true}]}>
-                <Input placeholder="이름" className="nameInput"/>
+                <Input placeholder="이름" className="nameInput" onChange={e => handleInputChange('name', e.target.value)}/>
             </Form.Item>
             <Form.Item<FieldType> name="phone" rules={[{required: true}]}>
-                <Input placeholder="전화번호" className="phoneInput"/>
+                <Input placeholder="전화번호" className="phoneInput" onChange={e => handleInputChange('phone', e.target.value)}/>
             </Form.Item>
             <Form.Item<FieldType> name="addressNumber" >
                 <div className="container">
