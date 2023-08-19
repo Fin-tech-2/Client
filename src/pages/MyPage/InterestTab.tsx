@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import "../../css/MyPage.scss";
 import { FundingData } from "../../types";
 import { Card, List } from "antd";

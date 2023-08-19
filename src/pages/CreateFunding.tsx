@@ -3,10 +3,14 @@ import "./../css/CreateFunding.scss";
 import { useState } from "react";
 import { FundingData } from "../types";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 const CreateFunding = () => {
   const navigate = useNavigate();
+
+  const params = useParams();
+  const id = params.id;
+
   const [inputs, setInputs] = useState<FundingData>({
     id: 0,
     title: "",
@@ -70,6 +74,7 @@ const CreateFunding = () => {
       alert("펀딩 등록에 성공하였습니다!");
       navigate("/my-page", { replace: true });
     });
+    sessionStorage.setItem("interest", String(id))
   };
 
   return (

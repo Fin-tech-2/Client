@@ -46,6 +46,11 @@ const SignUp = () => {
         open({onComplete: moveAddress});
     };
 
+    const goOnHome = () => {
+        alert('회원가입 되었습니다.');
+        navigate("/");
+    }
+
     return (
         <Form>
             <Form.Item<FieldType> name="email" rules={[{required: true}]}>
@@ -100,18 +105,15 @@ const SignUp = () => {
 
             <Form.Item>
                 <Select placeholder="관심분야" className="interests" style={{width: 400}}>
-                    <Select.Option value="demo1">부동산</Select.Option>
-                    <Select.Option value="demo2">투자</Select.Option>
-                    <Select.Option value="demo3">펀드</Select.Option>
-                    <Select.Option value="demo4">주식</Select.Option>
-                    <Select.Option value="demo5">금융권 취업</Select.Option>
-                    <Select.Option value="demo6">자산관리</Select.Option>
-                    <Select.Option value="demo7">예적금</Select.Option>
-                    <Select.Option value="demo8">대출</Select.Option>
-                    <Select.Option value="demo9">보험</Select.Option>
+                    <Select.Option value="demo1">재테크</Select.Option>
+                    <Select.Option value="demo2">주거</Select.Option>
+                    <Select.Option value="demo3">소비지출</Select.Option>
+                    <Select.Option value="demo4">신용관리</Select.Option>
+                    <Select.Option value="demo5">재무관리</Select.Option>
+                    <Select.Option value="demo6">금융권 취업</Select.Option>
                 </Select>
             </Form.Item>
-            <Button className="signUpBtn" type="primary" htmlType="submit"> 회원가입 </Button><br/>
+            <Button className="signUpBtn" type="primary" onClick={goOnHome}> 회원가입 </Button><br/>
         </Form>
     );
 };

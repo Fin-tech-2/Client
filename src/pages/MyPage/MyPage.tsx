@@ -57,7 +57,7 @@ const MyPage = () => {
                         <PurchaseDetailTab />
                     </TabPane>
                     <TabPane key="my-lecture" tab="내 강의">
-                        <MyLectureTab />
+                        <MyLectureTab data={data} />
                     </TabPane>
                 </Tabs>
             </div>
