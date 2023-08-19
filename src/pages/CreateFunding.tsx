@@ -68,7 +68,7 @@ const CreateFunding = () => {
 
     axios(option).then((res) => {
       alert("펀딩 등록에 성공하였습니다!");
-      navigate("/", { replace: true });
+      navigate("/my-page", { replace: true });
     });
   };
 

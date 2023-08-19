@@ -6,6 +6,7 @@ import type { TabsProps } from 'antd';
 import InterestTab from "./InterestTab";
 import PurchaseDetailTab from "./PurchaseDetailTab";
 import MyLectureTab from "./MyLectureTab";
+import {Outlet} from "react-router-dom";
 
 const onChange = (key: string) => {
     console.log(key);
@@ -55,6 +56,7 @@ const MyPage = () => {
             <div className="myPageTab">
                 <Tabs className="tab" defaultActiveKey="interest" items={items} onChange={onChange} />
             </div>
+            <Outlet />
         </div>
     );
 };
