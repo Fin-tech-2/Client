@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import { GoogleMap, useJsApiLoader, MarkerF } from "@react-google-maps/api";
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 
 const containerStyle = {
   width: "500px",
@@ -19,7 +19,7 @@ interface ICenter {
 function MyComponent() {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: "AIzaSyBlviBcDqrPcymf7tTV0C-zERv-hK0EmSw", // 주의: 공개적인 장소에 API 키를 노출하지 마세요!
+    googleMapsApiKey: process.env.MAP_API_KEY as string,
   });
 
   const [map, setMap] = useState<google.maps.Map | null>(null);
@@ -43,7 +43,7 @@ function MyComponent() {
       onLoad={onLoad}
       onUnmount={onUnmount}
     >
-      <MarkerF
+      <Marker
         position={{ lat: 37.546993, lng: 126.950141 }}
         icon={{
           url: "/assets/Logo.svg",
