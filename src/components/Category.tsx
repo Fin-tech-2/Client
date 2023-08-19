@@ -40,6 +40,7 @@ const Category = () => {
         });
 
         setData(transformedData);
+        sessionStorage.setItem("projectList", JSON.stringify(transformedData));
       })
       .catch(() => {
         console.log("불러오기 실패");
