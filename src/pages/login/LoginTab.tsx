@@ -10,22 +10,23 @@ const LoginTab = () => {
         console.log(key);
     };
 
-    const tabs = [
-        {label: '로그인', key: 'login', children: <Login />},
-        {label: '회원가입', key: 'sign-up', children: <SignUp/>},
-    ]
-    return (
-        <div>
+    const tabs = [{label: '로그인', key: 'login', children: <Login/>}, {
+        label: '회원가입',
+        key: 'sign-up',
+        children: <SignUp/>
+    },]
+    return (<div>
             <Header/>
-        <div className="tabBorder">
-            <Tabs
-                onChange={onChange}
-                type="card"
-                items={tabs}
-            />
-        </div>
-        </div>
-    );
+            <div className="wrapper">
+                <div className="tabBorder">
+                    <Tabs
+                        onChange={onChange}
+                        type="card"
+                        items={tabs}
+                    />
+                </div>
+            </div>
+        </div>);
 };
 
 export default LoginTab;
