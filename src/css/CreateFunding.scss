@@ -9,11 +9,12 @@
     button {
       font-family: "GangwonState";
       font-size: 20px;
-      background-color: #92cb76;
+      background-color: #2e2e2e;
       border: 0;
       border-radius: 5px;
       padding: 10px 20px;
       cursor: pointer;
+      color: #ebff00;
     }
   }
 
@@ -21,7 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #64a346;
+    border: 1px solid #2e2e2e;
     padding: 20px 10px;
     margin-top: 50px;
     border-radius: 5px;
@@ -37,12 +38,12 @@
         align-items: center;
 
         .head {
-          color: #64a346;
+          color: #2e2e2e;
           display: flex;
         }
 
         .input {
-          border: 1px solid #64a346;
+          border: 1px solid #2e2e2e;
           border-radius: 5px;
           padding: 10px 0;
           width: 80%;
