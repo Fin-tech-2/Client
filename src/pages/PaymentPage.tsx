@@ -3,13 +3,14 @@ import Header from "../components/Header";
 import "./../css/PaymentPage.scss";
 import {useEffect, useState} from "react";
 import { Modal } from "antd";
+import {useNavigate} from "react-router-dom";
 
 const PaymentPage = () => {
   const dataString = sessionStorage.getItem("data");
   const data = dataString ? JSON.parse(dataString) : null;
   const [activeButton, setActiveButton] = useState<string | null>(null);
-
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -21,6 +22,7 @@ const PaymentPage = () => {
 
   const handleModalClose = () => {
     setIsModalOpen(false);
+    navigate('/');
   };
 
   const handleButtonClick = (label: string) => {
