@@ -10,9 +10,9 @@ interface PreviewFormProps {
 
 const MyLectureTab = ({ data }: PreviewFormProps) => {
     const navigate = useNavigate();
-    const id = sessionStorage.getItem("myLecture");
-    console.log(id);
-    const myLecture = data.filter((it) => it.id === Number(id));
+    const title = sessionStorage.getItem("my-lecture");
+    console.log(title);
+    const myLecture = data.filter((it) => it.title === String(title));
 
     const goDetailPage = (itemId: number) => {
         navigate(`/detail-page/${itemId}`);

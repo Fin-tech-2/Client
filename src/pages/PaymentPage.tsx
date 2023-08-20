@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import "./../css/PaymentPage.scss";
 import {useEffect, useState} from "react";
 import { Modal } from "antd";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 const PaymentPage = () => {
   const dataString = sessionStorage.getItem("data");
@@ -11,9 +11,12 @@ const PaymentPage = () => {
   const [activeButton, setActiveButton] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
+  const params = useParams();
+  const id = params.id;
 
   const showModal = () => {
     setIsModalOpen(true);
+    sessionStorage.setItem("purchase-detail", String(id))
   };
 
   useEffect(() => {

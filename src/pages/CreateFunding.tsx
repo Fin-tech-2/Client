@@ -54,6 +54,7 @@ const CreateFunding = () => {
   };
 
   const createHandler = () => {
+    sessionStorage.setItem("my-lecture", String(title))
     const option = {
       url: "/api/articles",
       method: "POST",
@@ -74,7 +75,7 @@ const CreateFunding = () => {
       alert("펀딩 등록에 성공하였습니다!");
       navigate("/my-page", { replace: true });
     });
-    sessionStorage.setItem("interest", String(id))
+
   };
 
   return (
