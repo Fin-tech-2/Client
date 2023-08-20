@@ -89,7 +89,6 @@ const DetailPage = () => {
     };
 
     const onClickInterest = () => {
-
         sessionStorage.setItem("interest", String(id));
         alert('관심함에 추가되었습니다!');
     }
@@ -149,7 +148,7 @@ const DetailPage = () => {
                     <span style={{backgroundColor: "#ebff00", padding: "0 5px"}}>
               무려 50% 저렴
             </span>
-                    한 가격으로 <br/> 강의를 수강하실 수 있습니다!
+                    한 가격으로 <br/> 강연을 수강하실 수 있습니다!
                 </h2>
                 <p>
                     사람이 더 모이면 리워드가 추가될 수도 있어요 <br/> 공유하고 친구와
@@ -164,7 +163,7 @@ const DetailPage = () => {
                         className="thumbnail"
                         src={process.env.PUBLIC_URL + `/assets/thumbnail/${data?.thumbnail}`}
                     />
-                    <p className="notice">펀딩을 통해 출시된 강의 혜택을 제공합니다.</p>
+                    <p className="notice">펀딩을 통해 출시된 강연 혜택을 제공합니다.</p>
                     <div className="event">
                         <div className="event_title">
                             <p className="event_title_1">새소식</p>

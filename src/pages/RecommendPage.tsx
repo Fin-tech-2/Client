@@ -116,11 +116,11 @@ const RecommendPage = () => {
           </div>
           <div className="recommend-btn">
             <button onClick={handleRecommendBtnClick}>
-              시금치가 추천하는 나에게 딱 맞는 강의 바로보기!
+              시금치가 추천하는 나에게 딱 맞는 강연 바로보기!
             </button>
           </div>
           <div className="blinking-text">
-            관심있는 키워드를 선택하고 버튼을 클릭하면 맞춤 강의를 추천해
+            관심있는 키워드를 선택하고 버튼을 클릭하면 맞춤 강연을 추천해
             드려요!
           </div>
           <div className="recommend-project">

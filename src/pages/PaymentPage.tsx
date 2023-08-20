@@ -55,7 +55,7 @@ const PaymentPage = () => {
             </tr>
             <tr className="table">
               <td className="head">리워드 유형</td>
-              <td className="tail">오프라인 강의 + 멘토링</td>
+              <td className="tail">오프라인 강연 + 멘토링</td>
             </tr>
             <tr className="table">
               <td className="head">수량</td>
@@ -112,7 +112,7 @@ const PaymentPage = () => {
                 <span style={{ backgroundColor: "#ebff00", padding: "0 5px" }}>
               무려 50% 저렴
             </span>
-                한 가격으로 <br /> 강의를 구매하셨어요!
+                한 가격으로 <br /> 강연을 구매하셨어요!
               </h2>
               <p>
                 사람이 더 모이면 리워드가 추가될 수도 있어요 <br /> 공유하고 친구와

@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="763476be-c6c0-43d5-bb6f-ef542fcc8bb9" name="Changes" comment="마이페이지 구현 완료">
+    <list default="true" id="763476be-c6c0-43d5-bb6f-ef542fcc8bb9" name="Changes" comment="댓글 등록 버튼 톤앤매너">
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-07-29__3_12__________.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/2023-07-29_오후_3_12,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CreateFunding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CreateFunding.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/DetailPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/DetailPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/MyPage/MyPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/MyPage/MyPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/PaymentPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PaymentPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/RecommendPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/RecommendPage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +101,7 @@
       <workItem from="1691969820102" duration="1520000" />
       <workItem from="1692279140473" duration="7583000" />
       <workItem from="1692403108295" duration="658000" />
-      <workItem from="1692404499346" duration="45538000" />
+      <workItem from="1692404499346" duration="49097000" />
     </task>
     <task id="LOCAL-00001" summary="로그인/회원가입 페이지 구현">
       <created>1691147059056</created>
@@ -225,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692507390798</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="댓글 등록 버튼 톤앤매너">
+      <created>1692508824587</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1692508824587</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +272,7 @@
     <MESSAGE value="에러 리팩토링" />
     <MESSAGE value="댓글 기능 구현 완료" />
     <MESSAGE value="마이페이지 구현 완료" />
-    <option name="LAST_COMMIT_MESSAGE" value="마이페이지 구현 완료" />
+    <MESSAGE value="댓글 등록 버튼 톤앤매너" />
+    <option name="LAST_COMMIT_MESSAGE" value="댓글 등록 버튼 톤앤매너" />
   </component>
 </project>

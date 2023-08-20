@@ -95,7 +95,7 @@ const CreateFunding = () => {
               </td>
             </tr>
             <tr>
-              <td className="head">강의 소개</td>
+              <td className="head">강연 소개</td>
               <td>
                 <textarea
                   className="input"
@@ -161,7 +161,7 @@ const CreateFunding = () => {
               </td>
             </tr>
             <tr>
-              <td className="head">강의 소개 이미지</td>
+              <td className="head">강연 소개 이미지</td>
               <td>
                 <input
                   className="input file"
