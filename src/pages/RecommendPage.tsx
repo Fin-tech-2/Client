@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import Header from "../components/Header";
 import "./../css/Recommendpage.scss";
-import { Card, List } from "antd";
+import { useNavigate } from "react-router-dom";
 
 const TEXT_ITEMS = [
   "재테크",
@@ -12,6 +13,7 @@ const TEXT_ITEMS = [
 ];
 
 const RecommendPage = () => {
+  const navigate = useNavigate();
   const [positions, setPositions] = useState(() =>
     Array.from({ length: TEXT_ITEMS.length }, () => ({
       x: Math.random() * (window.innerWidth - 600),
@@ -19,17 +21,31 @@ const RecommendPage = () => {
     }))
   );
 
-  const projectList = sessionStorage.getItem("projectList");
-
   const [selected, setSelected] = useState<number[]>([]);
   const [data, setData] = useState<string[]>([]);
 
-  const changePosition = (index: number) => {
-    const maxWidth = 200; // 글자의 최대 너비를 추정.
-    const maxHeight = 30; // 글자의 최대 높이를 추정.
+  const [displayedProjects, setDisplayedProjects] = useState<any[]>([]); // 상태 추가
 
-    const maxMoveWidth = window.innerWidth - 600 - maxWidth; // move-text의 최대 너비에서 글자의 최대 너비를 뺀 값
-    const maxMoveHeight = 400 - maxHeight; // move-text의 높이 (500px의 80%인 400px)에서 글자의 최대 높이를 뺀 값
+  const projectList = sessionStorage.getItem("projectList");
+  const parsedProjectList = projectList ? JSON.parse(projectList) : [];
+  const filteredProjects = parsedProjectList.filter((project: any) =>
+    data.includes(project.category)
+  );
+
+  const handleRecommendBtnClick = () => {
+    const shuffledProjects = [...filteredProjects].sort(
+      () => 0.5 - Math.random()
+    );
+    const selectedProjects = shuffledProjects.slice(0, 3);
+    setDisplayedProjects(selectedProjects);
+  };
+
+  const changePosition = (index: number) => {
+    const maxWidth = 200;
+    const maxHeight = 30;
+
+    const maxMoveWidth = window.innerWidth - 600 - maxWidth;
+    const maxMoveHeight = 400 - maxHeight;
 
     const x = Math.random() * maxMoveWidth;
     const y = Math.random() * maxMoveHeight;
@@ -59,7 +75,7 @@ const RecommendPage = () => {
     for (let i = 0; i < TEXT_ITEMS.length; i++) {
       intervals[i] = setInterval(() => {
         changePosition(i);
-      }, 10000); // 10초마다 새 위치 설정
+      }, 10000);
     }
 
     return () => {
@@ -69,33 +85,56 @@ const RecommendPage = () => {
     };
   }, []);
 
+  const goDetailPage = (id: number) => {
+    navigate(`/detail-page/${id}`);
+  };
+
   return (
     <div className="RecommendPage">
-      <div className="recommend-wrapper">
-        <div className="move-text">
-          {TEXT_ITEMS.map((text, index) => (
-            <div
-              key={text}
-              className={`moving-text ${
-                selected.includes(index) ? "selected" : ""
-              }`}
-              style={{
-                left: positions[index].x,
-                top: positions[index].y,
-              }}
-              onClick={() => changeColor(index)}
-            >
-              {text}
-            </div>
-          ))}
+      <Header />
+      <div className="recommendPage">
+        <div className="recommend-wrapper">
+          <div className="move-text">
+            {TEXT_ITEMS.map((text, index) => (
+              <div
+                key={text}
+                className={`moving-text ${
+                  selected.includes(index) ? "selected" : ""
+                }`}
+                style={{
+                  left: positions[index].x,
+                  top: positions[index].y,
+                }}
+                onClick={() => changeColor(index)}
+              >
+                {text}
+              </div>
+            ))}
+          </div>
+          <div className="select-recommend">
+            선택한 관심사: # {data.join(" # ")}
+          </div>
+          <div className="recommend-btn">
+            <button onClick={handleRecommendBtnClick}>
+              시금치가 추천하는 나에게 딱 맞는 강의 바로보기!
+            </button>
+          </div>
+          <div className="blinking-text">
+            관심있는 키워드를 선택하고 버튼을 클릭하면 맞춤 강의를 추천해
+            드려요!
+          </div>
+          <div className="recommend-project">
+            {displayedProjects.map((project) => (
+              <div key={project.id}>
+                <img
+                  src={`/assets/thumbnail/` + project.thumbnail}
+                  onClick={() => goDetailPage(project.id)}
+                />
+                <p>{project.title}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="select-recommend">
-          선택한 관심사: # {data.join(" # ")}
-        </div>
-        <div className="recommend-btn">
-          <button>시금치가 추천하는 나에게 딱 맞는 강의 바로보기!</button>
-        </div>
-        <div className="recommend-project"></div>
       </div>
     </div>
   );

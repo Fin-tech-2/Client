@@ -1,19 +1,18 @@
-.RecommendPage {
+.recommendPage {
   position: relative;
   width: calc(100% - 600px);
-  height: 500px;
+  height: 800px; // 높이를 늘림
   margin: 0 300px;
   overflow: hidden;
 }
 
 .recommend-wrapper {
   display: flex;
-  flex-direction: column; // 세로 방향으로 정렬
-  align-items: center; // 가로 방향으로 중앙 정렬
-  height: 100%;
-  justify-content: space-between; // move-text와 select-recommend 사이에 공간을 최대한 활용
+  flex-direction: column;
+  align-items: center;
+  height: 100%; // 100%로 높이를 설정하여 부모 요소의 높이를 전부 차지하게 함
+  justify-content: space-between;
 }
-
 .move-text {
   position: relative; // 상대 위치를 지정하여 move-text 내부의 moving-text가 올바르게 위치하도록 합니다.
   width: 100%; // 전체 너비를 사용
@@ -50,5 +49,44 @@
     font-size: 20px;
     padding: 10px 10px 10px 10px;
     cursor: pointer;
+  }
+}
+
+@keyframes blinking {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.blinking-text {
+  margin-top: 30px;
+  animation: blinking 1s infinite;
+  color: #929c1e;
+}
+
+.recommend-project {
+  display: flex; // 가로로 나열
+  justify-content: space-between; // 요소들 사이의 공간을 균등하게 분배
+  align-items: center; // 요소들을 세로 방향으로 중앙 정렬
+  margin-top: 50px;
+
+  div {
+    flex: 1; // 각 프로젝트 요소들이 화면 너비를 균등하게 차지
+    text-align: center; // 프로젝트의 title을 가운데 정렬
+
+    img {
+      max-width: 80%; // 이미지가 해당 div를 벗어나지 않게 함
+      height: auto;
+      cursor: pointer;
+    }
   }
 }
