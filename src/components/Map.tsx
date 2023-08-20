@@ -19,7 +19,7 @@ interface ICenter {
 function MyComponent() {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: process.env.MAP_API_KEY as string,
+    googleMapsApiKey: "AIzaSyBlviBcDqrPcymf7tTV0C-zERv-hK0EmSw",
   });
 
   const [map, setMap] = useState<google.maps.Map | null>(null);
