@@ -261,8 +261,11 @@ const DetailPage = () => {
                 value={newComment}
                 onChange={(e) => setNewComment(e.target.value)}
             />
-            <Button className="commentBtn" type="primary" onClick={postComment}>등록</Button>
-        </div>
+            <Button className="commentBtn" type="primary" onClick={postComment}
+                    style={{backgroundColor: "#2E2E2E", color: "#EBFF00", fontWeight: 'bold',}}>
+                등록
+            </Button>
+        </div>'
         <div className="comments-list" >
             <h3 className="title"> 댓글 목록 </h3>
             <hr className="line" style={{width: 900}}/>
